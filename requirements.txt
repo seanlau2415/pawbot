@@ -1,0 +1,8 @@
+numpy~=1.19.5
+nltk~=3.6.2
+tensorflow~=2.5.0
+textblob~=0.15.3
+spellchecker~=0.4
+pyspellchecker
+Flask~=2.0.1
+pyttsx3~=2.90

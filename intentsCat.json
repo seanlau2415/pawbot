@@ -1,0 +1,914 @@
+{"intents": [
+    {"tag":  "greetings", "type": "general",
+     "patterns": ["hi", "hi there", "hello", "yo", "whats up", "anyone there", "good morning", "good afternoon", "good evening", "nice to meet you", "greetings"],
+     "responses": ["Greetings! How may I assist you today?", "Hello! What can I do for you today?", "Hi there! Anything on your mind?", "Hi, how can I help you today?"]
+    },
+    {"tag":  "identity", "type": "general",
+     "patterns": ["name", "purpose", "identity", "what should i call you?"],
+     "responses": ["My name is PawBot, I am a medical assistance chatbot for pet diseases!", "I'm PawBot, I can answer your questions regarding pet diseases, symptoms and treatments!"]
+    },
+    {"tag":  "goodbye", "type": "general",
+     "patterns": ["bye", "bye bye", "goodbye", "see ya", "see you next time", "have a good day", "leaving", "see you later"],
+     "responses": ["Goodbye! I wish good health to you and your pet.", "See ya! You know where to find me.", "Goodbye and take care!"]
+    },
+    {"tag":  "unsure", "type": "general",
+     "patterns": [""],
+     "responses": ["I'm sorry, could you rephrase your question or provide more info? If this occurs again, it means I may not have the sufficient knowledge to answer your question :(."]
+    },
+    {"tag":  "okay", "type": "general",
+     "patterns": ["okay", "ok", "k", "alright", "yes", "go on", "continue"],
+     "responses": ["Let us proceed", "Let us continue"]
+    },
+    {"tag":  "thanks", "type": "general",
+     "patterns": ["thank you", "i am grateful", "i appreciate it", "much obliged", "thankful"],
+     "responses": ["You are very welcome!", "I am happy to be of assistance!", "Welcome! I'm glad I was able to help"]
+    },
+    {"tag":  "help", "type": "general",
+     "patterns": ["i have some questions", "can you help me", "i need some information", "i want to ask something", "i need assistance", "excuse me"],
+     "responses": ["I am ready to help, ask me questions regarding pet diseases, symptoms or treatment and I will do my best to assist you!"]
+    },
+    {"tag":  "symptoms_help", "type": "general",
+     "patterns": ["my pet has symptoms", "my dog has symptoms", "my cat has symptoms", "i want to ask about symptoms", "i have questions about symptoms"],
+     "responses": ["I can help you, tell me all the noticed symptoms of your pet."]
+    },
+    {"tag":  "treatment_help", "type": "general",
+     "patterns": ["my pet needs treatment", "my dog needs treatment", "my cat needs treatment", "i want to ask about treatment", "i have questions about treatment"],
+     "responses": ["I can help you, tell me what health condition your pet is facing."]
+    },
+    {"tag":  "creator", "type": "general",
+     "patterns": ["who created you", "who is your creator", "who made you", "who is your maker", "who developed you", "who is your developer"],
+     "responses": ["I am developed by Sean Lau Jian-An, a software engineering student from TARUC."]
+    },
+    {"tag":  "consolation", "type": "general",
+     "patterns": ["scared", "sad", "worry", "terrified", "stress stressed", "going to be fine"],
+     "responses": ["I understand what you're feeling, but please do not worry. Consult your veterinarian for professional help. Your pet is going to be alright!"]
+    },
+    {"tag":  "nutrition", "type": "cat",
+     "patterns": ["diet advice tips", "nutrition advice tips", "what should i feed", "best food", "cannot eat", "what food are bad"],
+     "responses": ["It is recommended for your cat to receive  well balanced diet of protein, carbohydrates, fat, minerals and water. Experts recommend commercial cat food as the best way to feed your cat.Please avoid: Onions, Garlic, Dairy Products, Alcohol, Grapes, Caffeine, Chocolate, Bones, Raw food, Dog food."]
+    },
+    {"tag":  "enquiry_centre", "type": "general",
+     "patterns": ["where can i go for treatment", "clinic", "treatment centre", "hospital", "veterinarian", "vet", "treatment location"],
+     "responses": ["Could you tell me which state do you live in? (i.e.: Selangor/Perlis/Kedah)"]
+    },
+    {"tag":  "sarawak_centre", "type": "general",
+     "patterns": ["sarawak"],
+     "responses": ["The top 5 Sarawak veterinary centres that I have found are 'Animal Central Veterinary Clinic', 'Dr Zawani Animal Clinic', 'City Veterinary Centre', 'Lee Veterinary Hospital' and 'PetLife Veterinary Clinic'. Do Google them if you are interested."]
+    },
+    {"tag":  "sabah_centre", "type": "general",
+     "patterns": ["sabah"],
+     "responses": ["The top 5 Sabah veterinary centres that I have found are 'Kinabalu Animal Clinic', 'SVSS Animal Clinic', 'SAMS Animals Centre', 'Borneo Veterinary Centre' and 'Shakalaka Vet Care and Surgery'. Do Google them if you are interested."]
+    },
+    {"tag":  "selangor_centre", "type": "general",
+     "patterns": ["selangor"],
+     "responses": ["The top 5 Selangor veterinary centres that I have found are 'Animal Clinic SS14', 'Pets Health Veterinary Clinic and Surgery', 'Yee Veterinary Clinic and Surgery', 'Gasing Veterinary Hospital' and 'Philos Veterinary Clinic'. Do Google them if you are interested."]
+    },
+    {"tag":  "johor_centre", "type": "general",
+     "patterns": ["johor"],
+     "responses": ["The top 5 Johor veterinary centres that I have found are 'Koh Animal Clinic and Surgery', 'Thats Animal Centre', 'JB Animal Medical Clinic', 'Klinik Haiwan Dr Ain' and 'South Paws Veterinary Clinic'. Do Google them if you are interested."]
+    },
+    {"tag":  "kedah_centre", "type": "general",
+     "patterns": ["kedah"],
+     "responses": ["The top 5 Kedah veterinary centres that I have found are 'PetAnd'I Animal Clinic', 'Animal Clinic Sg Petani', 'Furmily Vet Clinic', 'Klinik Haiwan dan Surgeri Darul Aman' and 'Loving Animal Clinic'. Do Google them if you are interested."]
+    },
+    {"tag":  "penang_centre", "type": "general",
+     "patterns": ["penang"],
+     "responses": ["The top 5 Penang veterinary centres that I have found are 'AcuVet Veterinary Clinic', 'Ark Veterinary Centre', 'Grace Veterinary Centre', 'Neko Inu Veterinary Centre' and 'Cuddles Veterinary Clinic'. Do Google them if you are interested."]
+    },
+    {"tag":  "perak_centre", "type": "general",
+     "patterns": ["perak"],
+     "responses": ["The top 5 Perak veterinary centres that I have found are 'Ipoh Garden Animal Clinic', 'Klinik Haiwan Menglembu', 'Jean Veterinary Centre', 'Klinik Tee Veterinary' and 'Maxwell Animal Clinic'. Do Google them if you are interested."]
+    },
+    {"tag":  "perlis_centre", "type": "general",
+     "patterns": ["perlis"],
+     "responses": ["The top 3 Perlis veterinary centres that I have found are 'Pusat Perkhidmatan Veterinar Arau', 'Perlis Veterinary Services Department' and 'Klinik Haiwan dan Surgeri Kangar'. Do Google them if you are interested."]
+    },
+    {"tag":  "kelantan_centre", "type": "general",
+     "patterns": ["kelantan"],
+     "responses": ["The top 5 Kelantan veterinary centres that I have found are 'Vet o Vet Kota Bharu', 'Klinik Haiwan Kubang Kerian', 'V Care Animal Clinic', 'UMK Veterinary Clinic' and 'Klinik Haiwan Kota'. Do Google them if you are interested."]
+    },
+    {"tag":  "ns_centre", "type": "general",
+     "patterns": ["negeri sembilan"],
+     "responses": ["The top 5 Negeri Sembilan veterinary centres that I have found are 'Goh and Tan Veterinary Clinic', 'Klinik Haiwan Ee', 'Uptown Avenue Veterinary Clinic', 'Rasah Veterinary Clinic' and 'Klinik Haiwan Senawang'. Do Google them if you are interested."]
+    },
+    {"tag":  "pahang_centre", "type": "general",
+     "patterns": ["pahang"],
+     "responses": ["The top 5 Pahang veterinary centres that I have found are 'Dr Bhajan Singh Klinik Haiwan Pahang', 'Klinik Haiwan Kuantan', 'Kasah Vet', 'East Coast Animal Medical Centre' and 'Klinik Veterinar Vetcare RP'. Do Google them if you are interested."]
+    },
+    {"tag":  "terengganu_centre", "type": "general",
+     "patterns": ["terengganu"],
+     "responses": ["The top 5 Terengganu veterinary centres that I have found are 'DrNor Veterinary Clinic', 'Tawakkal Veterinary Services', 'Klinik Veterinar Haiwanku', 'Klinik Veterinar Kuala Ibai' and 'Klinik Haiwan Kemaman'. Do Google them if you are interested."]
+    },
+    {"tag":  "melaka_centre", "type": "general",
+     "patterns": ["melaka"],
+     "responses": ["The top 5 Melaka veterinary centres that I have found are 'My Animal Clinic & Surgery', 'Dr Jeya Vet Clinic Melaka', 'Afiyah Vet Cheng', 'Kim Veterinary Clinic & Surgery' and 'Maju Animal Clinic'. Do Google them if you are interested."]
+    },
+    {"tag":  "kl_centre", "type": "general",
+     "patterns": ["kuala lumpur"],
+     "responses": ["The top 5 Kuala Lumpur veterinary centres that I have found are 'VPAC Animal Clinic Kuchai Lama', 'Teoh Animal Clinic', 'C&D Veterinary Clinic', 'TTDI Veterinary Clinic' and 'Bangsar Veterinary Clinic and Surgery'. Do Google them if you are interested."]
+    },
+    {"tag":  "malaysia", "type": "general",
+     "patterns": ["malaysia"],
+     "responses": ["Hello Malaysian, tell me which state you are living in for me to suggest a treatment location for your pet."]
+    },
+    {"tag":  "analgland_cat_def", "type": "cat",
+     "patterns": ["anal gland disease", "anal gland disease definition", "anal gland disease meaning"],
+     "responses": ["Anal gland disease is the swelling of anal sacs due to inflammation of the ducts. It can cause pain when your cat passes feces."]
+    },
+    {"tag":  "analgland_cat_diagnosis", "type": "cat",
+     "patterns": ["licking butt", "biting butt", "chasing tail", "swelling near anus", "swollen butt", "pain pooping", "pain sitting", "dragging butt on floor", "rubbing butt on floor"],
+     "responses": ["Anal Gland Disease"]
+    },
+    {"tag":  "analgland_cat_symptoms", "type": "cat",
+     "patterns": ["anal gland disease symptoms", "anal gland disease signs", "anal gland disease indicators", "anal gland disease indications"],
+     "responses": ["The symptoms of Anal gland disease include 'licking or biting rear', 'chasing tail', 'swelling near anus', 'pain when pooping or sitting', 'dragging rear on ground'."]
+    },
+    {"tag":  "analgland_cat_treatment", "type": "cat",
+     "patterns": ["treatment for anal gland disease", "treat anal gland disease", "cure anal gland disease", "remedy anal gland disease", "heal anal gland disease", "medication anal gland disease"],
+     "responses": ["Add more fiber to your cat's diet, seek professional medical help from vets as surgery may be required in serious cases"]
+    },
+    {"tag":  "acne_def", "type": "cat",
+     "patterns": ["cat acne", "cat acne definition", "cat acne meaning"],
+     "responses": ["Cat acne, or follicular keratinization as it’s officially known, forms when the hair follicles are blocked due to an excessive production of keratin, a protein found in the skin."]
+    },
+    {"tag":  "acne_diagnosis", "type": "cat",
+     "patterns": ["dirty chin", "blackheads", "whiteheads", "swollen lips","swollen chin", "pimples chin", "pimples lips", "plastic cup", "plastic bowl"],
+     "responses": ["Cat Acne"]
+    },
+    {"tag":  "acne_symptoms", "type": "cat",
+     "patterns": ["cat acne symptoms", "cat acne signs", "cat acne indicators", "cat acne indications"],
+     "responses": ["The symptoms of Cat Acne include 'dirty chin', 'blackheads or whiteheads', 'lip and chin swelling', 'pimples on chin or lips'."]
+    },
+    {"tag":  "acne_treatment", "type": "cat",
+     "patterns": ["treatment for cat acne", "treat cat acne", "cure cat acne", "remedy cat acne", "heal cat acne", "medication cat acne"],
+     "responses": ["Replace plastic food and water dishes with smooth surfaced dishes such as glass. Antibacterial shampoo can be used to cleanse the infected area."]
+    },
+    {"tag":  "arthritis_cat_def", "type": "cat",
+     "patterns": ["arthritis", "arthritis definition", "arthritis meaning"],
+     "responses": ["Osteoarthritis (OA) is a complex condition involving inflammation and degeneration of one or more joints."]
+    },
+    {"tag":  "arthritis_cat_diagnosis", "type": "cat",
+     "patterns": ["leg stiffness", "stiff", "limping", "aggression", "aggressive", "sleepy", "refuse play", "overweight", "obese", "fat", "old"],
+     "responses": ["Arthritis"]
+    },
+    {"tag":  "arthritis_cat_symptoms", "type": "cat",
+     "patterns": ["arthritis symptoms", "arthritis signs", "arthritis indicators", "arthritis indications"],
+     "responses": ["The symptoms of Arthritis include 'leg stiffness', 'limping', 'aggression', 'sleeping more than usual', 'reluctance in jumping', 'reluctance in going up or down stairs'."]
+    },
+    {"tag":  "arthritis_cat_treatment", "type": "cat",
+     "patterns": ["treatment for arthritis", "treat arthritis", "cure arthritis", "remedy arthritis", "heal arthritis", "medication arthritis"],
+     "responses": ["Seek professional medical help from vets to perform a full physical examination. Anti-inflammatory drugs or painkillers may be prescribed."]
+    },
+    {"tag":  "asthma_def", "type": "cat",
+     "patterns": ["asthma", "asthma definition", "asthma meaning"],
+     "responses": ["Cat asthma, or feline asthma is chronic inflammation of the airways in the lungs."]
+    },
+    {"tag":  "asthma_diagnosis", "type": "cat",
+     "patterns": ["difficulty breathing", "hard to breath", "coughing", "vomiting", "less energy", "increased breathing rate", "fast breathing", "hunched shoulders", "hunched back", "smoke", "aerosol sprays", "dusty litter"],
+     "responses": ["Asthma"]
+    },
+    {"tag":  "asthma_symptoms", "type": "cat",
+     "patterns": ["asthma symptoms", "asthma signs", "asthma indicators", "asthma indications"],
+     "responses": ["The symptoms of Asthma include 'difficulty breathing', 'coughing', 'vomiting', 'less energy', 'rapid breathing', 'hunched shoulders'."]
+    },
+    {"tag":  "asthma_treatment", "type": "cat",
+     "patterns": ["treatment for asthma", "treat asthma", "cure asthma", "remedy asthma", "heal asthma", "medication asthma"],
+     "responses": ["Seek professional medical help from vets to obtain anti-inflammation medications. You may also remove the use of allergens such as smoke or aerosol sprays."]
+    },
+    {"tag":  "bladderstones_cat_def", "type": "cat",
+     "patterns": ["bladder stones", "bladder stones definition", "bladder stones meaning"],
+     "responses": ["Bladder stones, also known as “uroliths,” are stony collections of minerals, crystals, and organic material that collect in the bladder."]
+    },
+    {"tag":  "bladderstones_cat_diagnosis", "type": "cat",
+     "patterns": ["always urinate", "always pee", "licking genitals", "bloody blood urine", "bloody blood pee", "difficulty urinating", "hard to urinate"],
+     "responses": ["Bladder Stones"]
+    },
+    {"tag":  "bladderstones_cat_symptoms", "type": "cat",
+     "patterns": ["bladder stones symptoms", "bladder stones signs", "bladder stones indicators", "bladder stones indications"],
+     "responses": ["The symptoms of Bladder Stones include 'difficulty urinating', 'frequent urination', 'licking genitals', 'blood in urine', 'urinating in weird places'."]
+    },
+    {"tag":  "bladderstones_cat_treatment", "type": "cat",
+     "patterns": ["treatment for bladder stones", "treat bladder stones", "cure bladder stones", "remedy bladder stones", "heal bladder stones", "medication bladder stones"],
+     "responses": ["Seek professional medical help from vets. Treatment varies from bladder flushing, special diet plans or surgery."]
+    },
+    {"tag":  "calicivirus_def", "type": "cat",
+     "patterns": ["feline calicivirus", "feline calicivirus definition", "feline calicivirus meaning"],
+     "responses": ["Feline calicivirus is a virus that is an important cause of upper respiratory infections and oral disease in cats."]
+    },
+    {"tag":  "calicivirus_diagnosis", "type": "cat",
+     "patterns": ["sneezing", "discharge liquid nose", "discharge liquid eyes", "ulcers tongue", "ulcers gums", "ulcers lips", "ulcers nose", "drooling"],
+     "responses": ["Feline Calicivirus"]
+    },
+    {"tag":  "calicivirus_symptoms", "type": "cat",
+     "patterns": ["feline calicivirus symptoms", "feline calicivirus signs", "feline calicivirus indicators", "feline calicivirus indications"],
+     "responses": ["The symptoms Feline Calicivirus of include 'sneezing', 'discharge from nose or eyes', 'ulcers on tongue/gums/lips/nose', 'drooling'."]
+    },
+    {"tag":  "calicivirus_treatment", "type": "cat",
+     "patterns": ["treatment for feline calicivirus", "treat feline calicivirus", "cure feline calicivirus", "remedy feline calicivirus", "heal feline calicivirus", "medication feline calicivirus"],
+     "responses": ["Seek professional medical help from vets to obtain eye or anti-inflammatory medications. A steamy bath may be beneficial if your cat's nose is congested."]
+    },
+    {"tag":  "braintumor_cat_def", "type": "cat",
+     "patterns": ["brain tumor", "brain tumor definition", "brain tumor meaning"],
+     "responses": ["A brain tumor is a mass or growth of abnormal cells in the brain which may turn cancerous."]
+    },
+    {"tag":  "braintumor_cat_diagnosis", "type": "cat",
+     "patterns": ["seizures", "head tilt", "pressing head", "pushing head", "looks drunk", "chasing tail"],
+     "responses": ["Brain Tumor"]
+    },
+    {"tag":  "braintumor_cat_symptoms", "type": "cat",
+     "patterns": ["brain tumor symptoms", "brain tumor signs", "brain tumor indicators", "brain tumor indications"],
+     "responses": ["The symptoms of Brain Tumor include 'seizures', 'head tilting', 'pressing head on floor or furniture', 'looks drunk', 'chasing tail'."]
+    },
+    {"tag":  "braintumor_cat_treatment", "type": "cat",
+     "patterns": ["treatment for brain tumor", "treat brain tumor", "cure brain tumor", "remedy brain tumor", "heal brain tumor", "medication brain tumor"],
+     "responses": ["Seek professional medical help from vets to determine the severity of the tumor. Treatment varies from surgery to chemotherapy."]
+    },
+    {"tag":  "diabetes_cat_def", "type": "cat",
+     "patterns": ["diabetes", "diabetes definition", "diabetes meaning"],
+     "responses": ["Diabetes mellitus is a condition in which the body cannot properly produce or respond to the hormone insulin."]
+    },
+    {"tag":  "diabetes_cat_diagnosis", "type": "cat",
+     "patterns": ["always urinate", "always pee", "drinks drinking a lot of water", "thirsty", "increased appetite", "hungry", "weight loss", "obese", "overweight", "fat"],
+     "responses": ["Diabetes"]
+    },
+    {"tag":  "diabetes_cat_symptoms", "type": "cat",
+     "patterns": ["diabetes symptoms", "diabetes signs", "diabetes indicators", "diabetes indications"],
+     "responses": ["The symptoms of Diabetes include 'always urinating', 'drinking a lot of water', 'increased appetite', 'weight loss'."]
+    },
+    {"tag":  "diabetes_cat_treatment", "type": "cat",
+     "patterns": ["treatment for diabetes", "treat diabetes", "cure diabetes", "remedy diabetes", "heal diabetes", "medication diabetes"],
+     "responses": ["Seek professional medical help from vets to obtain insulin injections and guidance for a well balanced diet."]
+    },
+    {"tag":  "panleukopenia_def", "type": "cat",
+     "patterns": ["panleukopenia", "panleukopenia definition", "panleukopenia meaning"],
+     "responses": ["Feline panleukopenia virus (FPV), also commonly referred to as feline distemper, is a highly contagious and life-threatening viral disease in the cat population."]
+    },
+    {"tag":  "panleukopenia_diagnosis", "type": "cat",
+     "patterns": ["vomiting", "diarrhea", "weight loss", "high fever", "rough fur rough hair", "hiding", "contact with poop stool", "touch play poop stool"],
+     "responses": ["Panleukopenia"]
+    },
+    {"tag":  "panleukopenia_symptoms", "type": "cat",
+     "patterns": ["panleukopenia symptoms", "panleukopenia signs", "panleukopenia indicators", "panleukopenia indications"],
+     "responses": ["The symptoms of Panleukopenia include 'vomiting', 'diarrhea', 'weight loss', 'high fever', 'rough fur', 'loss of interest in eating', 'hiding'."]
+    },
+    {"tag":  "panleukopenia_treatment", "type": "cat",
+     "patterns": ["treatment for panleukopenia", "treat panleukopenia", "cure panleukopenia", "remedy panleukopenia", "heal panleukopenia", "medication panleukopenia"],
+     "responses": ["Seek professional medical help from vets immediately as hospitalization is often needed to restore body fluid levels and electrolyte balance."]
+    },
+    {"tag":  "conjunctivitis_cat_def", "type": "cat",
+     "patterns": ["conjunctivitis", "conjunctivitis definition", "conjunctivitis meaning"],
+     "responses": ["Conjunctivitis is the inflammation of the conjunctiva, which is the thin membrane on the inside of the eyelids and white part of the eye."]
+    },
+    {"tag":  "conjunctivitis_cat_diagnosis", "type": "cat",
+     "patterns": ["tears", "yellow green eye discharge", "yellow green eye liquid", "keeps closing eyes", "blinking"],
+     "responses": ["Conjunctivitis"]
+    },
+    {"tag":  "conjunctivitis_cat_symptoms", "type": "cat",
+     "patterns": ["conjunctivitis symptoms", "conjunctivitis signs", "conjunctivitis indicators", "conjunctivitis indications"],
+     "responses": ["The symptoms of Conjunctivitis include 'tearing of watering from eye', 'yellow/green eye discharge', 'keeps closing eyes', 'excessive blinking'."]
+    },
+    {"tag":  "conjunctivitis_cat_treatment", "type": "cat",
+     "patterns": ["treatment for conjunctivitis", "treat conjunctivitis", "cure conjunctivitis", "remedy conjunctivitis", "heal conjunctivitis", "medication conjunctivitis"],
+     "responses": ["Seek professional medical help from vets. Medications will be prescribed usually as eye drops."]
+    },
+    {"tag":  "earmites_def", "type": "cat",
+     "patterns": ["ear mite", "ear mite definition", "ear mite meaning"],
+     "responses": ["Ear mites are parasites that can cause significant inflammation and swelling in the ear canal and are very itchy."]
+    },
+    {"tag":  "earmites_diagnosis", "type": "cat",
+     "patterns": ["scratching ear", "dark dry discharge from ear", "shaking head", "red eyes"],
+     "responses": ["Ear Mites"]
+    },
+    {"tag":  "earmites_symptoms", "type": "cat",
+     "patterns": ["ear mite symptoms", "ear mite signs", "ear mite indicators", "ear mite indications"],
+     "responses": ["The symptoms of Ear mites include 'scratching ear', 'dark dry discharge from ear', 'shaking head', 'red eyes'."]
+    },
+    {"tag":  "earmites_treatment", "type": "cat",
+     "patterns": ["treatment for ear mite", "treat ear mite", "cure ear mite", "remedy ear mite", "heal ear mite", "medication ear mite"],
+     "responses": ["Seek professional medical help from vets as different treatments may be suggested such as ear cleaning or prescription of ear drops."]
+    },
+    {"tag":  "fadingsyndrome_def", "type": "cat",
+     "patterns": ["fading kitten syndrome", "fading kitten syndrome definition", "fading kitten syndrome meaning"],
+     "responses": ["Fading Kitten Syndrome is a life threatening emergency in which a healthy kitten 'crashes' and begins to fade."]
+    },
+    {"tag":  "fadingsyndrome_diagnosis", "type": "cat",
+     "patterns": ["low body temperature", "cold body", "no energy", "unable to stand", "cannot stand up", "unresponsive", "difficulty breathing", "hard to breathe", "meowing meow"],
+     "responses": ["Fading Kitten Syndrome"]
+    },
+    {"tag":  "fadingsyndrome_symptoms", "type": "cat",
+     "patterns": ["fading kitten syndrome symptoms", "fading kitten syndrome signs", "fading kitten syndrome indicators", "fading kitten syndrome indications"],
+     "responses": ["The symptoms of include 'low body temperature', 'no energy', 'unable to get up or stand', 'unresponsive', 'difficulty breathing', 'meowing or crying'."]
+    },
+    {"tag":  "fadingsyndrome_treatment", "type": "cat",
+     "patterns": ["treatment for fading kitten syndrome", "treat fading kitten syndrome", "cure fading kitten syndrome", "remedy fading kitten syndrome", "heal fading kitten syndrome", "medication fading kitten syndrome"],
+     "responses": ["Keep your cat warm by wrapping it with a blanket and seek professional medical help immediately as it is life threatening."]
+    },
+    {"tag":  "fiv_def", "type": "cat",
+     "patterns": ["feline immunodeficiency virus", "feline immunodeficiency virus definition", "feline immunodeficiency virus meaning"],
+     "responses": ["Feline immunodeficiency virus (FIV) is one of the most common and consequential infectious diseases of cats around the world which attacks the immune system."]
+    },
+    {"tag":  "fiv_diagnosis", "type": "cat",
+     "patterns": ["fever", "no appetite", "less appetite", "diarrhea", "seizures", "swollen gums"],
+     "responses": ["Feline Immunodeficiency Virus"]
+    },
+    {"tag":  "fiv_symptoms", "type": "cat",
+     "patterns": ["feline immunodeficiency virus symptoms", "feline immunodeficiency virus signs", "feline immunodeficiency virus indicators", "feline immunodeficiency virus indications"],
+     "responses": ["The symptoms of Feline Immunodeficiency Virus include 'fever that keeps coming back', 'appetite loss', 'constant diarrhea', 'seizures', 'swollen gums'."]
+    },
+    {"tag":  "fiv_treatment", "type": "cat",
+     "patterns": ["treatment for feline immunodeficiency virus", "treat feline immunodeficiency virus", "cure feline immunodeficiency virus", "remedy feline immunodeficiency virus", "heal feline immunodeficiency virus", "medication feline immunodeficiency virus"],
+     "responses": ["Unfortunately, there is no definitive cure for FIV. However, seek professional medical help from vets for suitable treatments such as immune system boosts."]
+    },
+    {"tag":  "fip_def", "type": "cat",
+     "patterns": ["feline infectious peritonitis", "feline infectious peritonitis definition", "feline infectious peritonitis meaning"],
+     "responses": ["Feline infectious peritonitis (FIP) is a viral disease caused by a feline coronavirus that affects wild and domestic cats."]
+    },
+    {"tag":  "fip_diagnosis", "type": "cat",
+     "patterns": ["fever", "no appetite", "less appetite", "less energy", "difficulty breathing", "hard to breathe", "weight loss"],
+     "responses": ["Feline Infectious Peritonitis"]
+    },
+    {"tag":  "fip_symptoms", "type": "cat",
+     "patterns": ["feline infectious peritonitis symptoms", "feline infectious peritonitis signs", "feline infectious peritonitis indicators", "feline infectious peritonitis indications"],
+     "responses": ["The symptoms of Feline Infectious Peritonitis include 'inconsistent fever', 'appetite loss', 'less energy', 'difficulty breathing', 'weight loss'."]
+    },
+    {"tag":  "fip_treatment", "type": "cat",
+     "patterns": ["treatment for feline infectious peritonitis", "treat feline infectious peritonitis", "cure feline infectious peritonitis", "remedy feline infectious peritonitis", "heal feline infectious peritonitis", "medication feline infectious peritonitis"],
+     "responses": ["Unfortunately, there is no cure for FIP. However, seek professional medical help from vets for supportive treatments which may extend longevity."]
+    },
+    {"tag":  "flv_def", "type": "cat",
+     "patterns": ["feline leukemia virus", "feline leukemia virus definition", "feline leukemia virus meaning"],
+     "responses": ["Feline leukemia virus (FLV) is a virus that infects cats. It was first discovered in cats with a form of leukemia (cancer of the white blood cells)."]
+    },
+    {"tag":  "flv_diagnosis", "type": "cat",
+     "patterns": ["pale white gums", "yellow mouth", "yellow eyes", "weight loss", "weak", "difficulty breathing", "hard to breathe", "sterile", "cannot make babies", "fighting with wild cats"],
+     "responses": ["Feline Leukemia Virus"]
+    },
+    {"tag":  "flv_symptoms", "type": "cat",
+     "patterns": ["feline leukemia virus symptoms", "feline leukemia virus signs", "feline leukemia virus indicators", "feline leukemia virus indications"],
+     "responses": ["The symptoms of Feline Leukemia Virus include 'pale gums', 'yellow mouth and eyes', 'weight loss', 'poor fur', 'weakness', 'difficulty breathing', 'sterile'."]
+    },
+    {"tag":  "flv_treatment", "type": "cat",
+     "patterns": ["treatment for feline leukemia virus", "treat feline leukemia virus", "cure feline leukemia virus", "remedy feline leukemia virus", "heal feline leukemia virus", "medication feline leukemia virus"],
+     "responses": ["Unfortunately, there is no cure for FLV. However, regular checkups with professional vets can help in preventing a secondary infection."]
+    },
+    {"tag":  "gingivitis_def", "type": "cat",
+     "patterns": ["gingivitis", "gingivitis definition", "gingivitis meaning"],
+     "responses": ["Gingivitis is an inflammation of the gums which can result in sore, red and swollen gums."]
+    },
+    {"tag":  "gingivitis_diagnosis", "type": "cat",
+     "patterns": ["red swollen gums", "bad breath", "smelly breath", "no brushing teeth", "old"],
+     "responses": ["Gingivitis"]
+    },
+    {"tag":  "gingivitis_symptoms", "type": "cat",
+     "patterns": ["gingivitis symptoms", "gingivitis signs", "gingivitis indicators", "gingivitis indications"],
+     "responses": ["The symptoms of Gingivitis include 'red swollen gums', 'pain', 'discomfort', 'bad breath'."]
+    },
+    {"tag":  "gingivitis_treatment", "type": "cat",
+     "patterns": ["treatment for gingivitis", "treat gingivitis", "cure gingivitis", "remedy gingivitis", "heal gingivitis", "medication gingivitis"],
+     "responses": ["Improve your cat's oral care by regularly brushing its teeth. If the teeth are overcrowded, seek professional medical help as teeth extraction may be needed."]
+    },
+    {"tag":  "glaucoma_cat_def", "type": "cat",
+     "patterns": ["glaucoma", "glaucoma definition", "glaucoma meaning"],
+     "responses": ["Glaucoma is a disease of the eye in which the pressure within the eye, called the intraocular pressure (IOP) is increased."]
+    },
+    {"tag":  "glaucoma_cat_diagnosis", "type": "cat",
+     "patterns": ["rubbing eye", "hiding", "tears", "swollen eye", "red bloodshot eye", "blind"],
+     "responses": ["Glaucoma"]
+    },
+    {"tag":  "glaucoma_cat_symptoms", "type": "cat",
+     "patterns": ["glaucoma symptoms", "glaucoma signs", "glaucoma indicators", "glaucoma indications"],
+     "responses": ["The symptoms of Glaucoma include 'rubbing eye', 'hiding', 'watery eye', 'swollen eye', 'red bloodshot eye', 'blindness'."]
+    },
+    {"tag":  "glaucoma_cat_treatment", "type": "cat",
+     "patterns": ["treatment for glaucoma", "treat glaucoma", "cure glaucoma", "remedy glaucoma", "heal glaucoma", "medication glaucoma"],
+     "responses": ["Seek professional medical help from vets immediately as severe cases may lead to permanent blindness."]
+    },
+    {"tag":  "hairballs_def", "type": "cat",
+     "patterns": ["hairballs", "hairballs definition", "hairballs meaning"],
+     "responses": ["A cat hairball is a collection of dead hair and digestive juices that have formed in your cat’s stomach."]
+    },
+    {"tag":  "hairballs_diagnosis", "type": "cat",
+     "patterns": ["gagging", "choking", "vomiting", "less appetite", "no appetite", "constipation", "diarrhea", "swallow hair", "long hair"],
+     "responses": ["Hairballs"]
+    },
+    {"tag":  "hairballs_symptoms", "type": "cat",
+     "patterns": ["hairballs symptoms", "hairballs signs", "hairballs indicators", "hairballs indications"],
+     "responses": ["The symptoms of Hairballs include 'gagging', 'choking', 'vomiting', 'lack of appetite', 'constipation', 'diarrhea'."]
+    },
+    {"tag":  "hairballs_treatment", "type": "cat",
+     "patterns": ["treatment for hairballs", "treat hairballs", "cure hairballs", "remedy hairballs", "heal hairballs", "medication hairballs"],
+     "responses": ["You may groom your cat regularly to remove excess fur from their coat. You may also use specialized hairball formula catfood or laxatives."]
+    },
+    {"tag":  "hookworm_cat_def", "type": "cat",
+     "patterns": ["hookworm", "hookworm definition", "hookworm meaning"],
+     "responses": ["Hookworms are intestinal parasites of the cat and dog. Their name is derived from the hook-like mouthparts they use to anchor themselves to the lining of the intestinal wall."]
+    },
+    {"tag":  "hookworm_cat_diagnosis", "type": "cat",
+     "patterns": ["weight loss", "dark fur", "black dark stool", "black dark poop", "diarrhea"],
+     "responses": ["Hookworms"]
+    },
+    {"tag":  "hookworm_cat_symptoms", "type": "cat",
+     "patterns": ["hookworm symptoms", "hookworm signs", "hookworm indicators", "hookworm indications"],
+     "responses": ["The symptoms of Hookworms include 'weight loss', 'poor dark fur', 'black dark stool', 'diarrhea'."]
+    },
+    {"tag":  "hookworm_cat_treatment", "type": "cat",
+     "patterns": ["treatment for hookworm", "treat hookworm", "cure hookworm", "remedy hookworm", "heal hookworm", "medication hookworm"],
+     "responses": ["Seek professional medical help from vets to perform a deworming process to remove the infestation."]
+    },
+    {"tag":  "catherpes_def", "type": "cat",
+     "patterns": ["cat herpes", "cat herpes definition", "cat herpes meaning"],
+     "responses": ["Cat herpes (also known as feline herpes) is a contagious virus that causes cat flu and other respiratory infections in both wild and domestic cats."]
+    },
+    {"tag":  "catherpes_diagnosis", "type": "cat",
+     "patterns": ["eye discharge liquid", "red eye", "sneezing", "drooling", "tired", "faigue", "fever", "coughing", "no appetite", "less appetite", "living with other cats"],
+     "responses": ["Cat Herpes"]
+    },
+    {"tag":  "catherpes_symptoms", "type": "cat",
+     "patterns": ["cat herpes symptoms", "cat herpes signs", "cat herpes indicators", "cat herpes indications"],
+     "responses": ["The symptoms of include 'eye discharge', 'pink eye', 'sneezing', 'drooling', 'tired', 'fever', 'coughing', 'appetite loss'."]
+    },
+    {"tag":  "catherpes_treatment", "type": "cat",
+     "patterns": ["treatment for cat herpes", "treat cat herpes", "cure cat herpes", "remedy cat herpes", "heal cat herpes", "medication cat herpes"],
+     "responses": ["Seek professional medical help from vets as feline herpes can be treated with antiviral drugs or hospitalization."]
+    },
+    {"tag":  "hyperthyroidism_def", "type": "cat",
+     "patterns": ["hyperthyroidism", "hyperthyroidism definition", "hyperthyroidism meaning"],
+     "responses": ["Hyperthyroidism is a common disease in cats caused by the overproduction of thyroid hormone by the thyroid glands."]
+    },
+    {"tag":  "hyperthyroidism_diagnosis", "type": "cat",
+     "patterns": ["thirsty", "always urinate", "always pee", "vomiting", "diarrhea", "hyperactive", "very active", "does not sleep", "aggression", "aggressive", "oily greasy fur", "oily greasy hair"],
+     "responses": ["Hyperthyroidism"]
+    },
+    {"tag":  "hyperthyroidism_symptoms", "type": "cat",
+     "patterns": ["hyperthyroidism symptoms", "hyperthyroidism signs", "hyperthyroidism indicators", "hyperthyroidism indications"],
+     "responses": ["The symptoms of Hyperthyroidism include 'always thirsty', 'always urinates', 'vomiting', 'diarrhea', 'hyperactive', 'does not sleep', 'aggression', 'oily greasy hair'."]
+    },
+    {"tag":  "hyperthyroidism_treatment", "type": "cat",
+     "patterns": ["treatment for hyperthyroidism", "treat hyperthyroidism", "cure hyperthyroidism", "remedy hyperthyroidism", "heal hyperthyroidism", "medication hyperthyroidism"],
+     "responses": ["Seek professional medical help from vets as different treatments may be recommended such as anti-thyroid drugs, radioactive therapy or surgery."]
+    },
+    {"tag":  "ibd_cat_def", "type": "cat",
+     "patterns": ["inflammatory bowel disease", "inflammatory bowel disease definition", "inflammatory bowel disease meaning"],
+     "responses": ["Inflammatory bowel disease (IBD) is a condition in which your cat's intestine or digestive tract becomes inflamed consistently."]
+    },
+    {"tag":  "ibd_cat_diagnosis", "type": "cat",
+     "patterns": ["vomiting", "diarrhea", "weight loss", "no appetite", "less appetite", "increased appetite", "vomiting hairballs"],
+     "responses": ["Inflammatory Bowel Disease"]
+    },
+    {"tag":  "ibd_cat_symptoms", "type": "cat",
+     "patterns": ["inflammatory bowel disease symptoms", "inflammatory bowel disease signs", "inflammatory bowel disease indicators", "inflammatory bowel disease indications"],
+     "responses": ["The symptoms of Inflammatory Bowel Disease include 'chronic vomiting', 'chronic diarrhea', 'weight loss', 'appetite loss', 'increased appetite', 'always vomiting hairballs'."]
+    },
+    {"tag":  "ibd_cat_treatment", "type": "cat",
+     "patterns": ["treatment for inflammatory bowel disease", "treat inflammatory bowel disease", "cure inflammatory bowel disease", "remedy inflammatory bowel disease", "heal inflammatory bowel disease", "medication inflammatory bowel disease"],
+     "responses": ["Seek professional medical help from vets to determine to underlying cause of the reaction. Diet changes, deworming procedures or medications may be recommended by your vet."]
+    },
+    {"tag":  "kidneydisease_cat_def", "type": "cat",
+     "patterns": ["kidney disease", "kidney disease definition", "kidney disease meaning"],
+     "responses": ["Kidney disease is associated with aging, and in simple terms can be considered to be the 'wearing out' of the kidney tissues."]
+    },
+    {"tag":  "kidneydisease_cat_diagnosis", "type": "cat",
+     "patterns": ["always urinate", "always pee", "drinks drinking a lot of water", "bloody blood urine", "bloody blood pee", "bad breath", "smelly breath", "brown tongue", "constipation"],
+     "responses": ["Kidney Disease"]
+    },
+    {"tag":  "kidneydisease_cat_symptoms", "type": "cat",
+     "patterns": ["kidney disease symptoms", "kidney disease signs", "kidney disease indicators", "kidney disease indications"],
+     "responses": ["The symptoms of Kidney Disease include 'always urinating', 'urinating outside litter box', 'drinking a lot of water', 'blood in urine', 'bad breath', 'brown tongue', 'constipation'."]
+    },
+    {"tag":  "kidneydisease_cat_treatment", "type": "cat",
+     "patterns": ["treatment for kidney disease", "treat kidney disease", "cure kidney disease", "remedy kidney disease", "heal kidney disease", "medication kidney disease"],
+     "responses": ["Seek professional medical help from vets to perform blood and urine tests. Treatments range from surgery to special diet or medications."]
+    },
+    {"tag":  "obesity_def", "type": "cat",
+     "patterns": ["obesity", "obesity definition", "obesity meaning"],
+     "responses": ["Obesity refers to an excess of white adipose tissue and is normally the result of energy intake exceeding energy expenditure."]
+    },
+    {"tag":  "obesity_cat_diagnosis", "type": "cat",
+     "patterns": ["weight gain", "fat", "difficulty breathing", "hard to breathe", "difficulty moving", "hard to move around", "bad diet", "less exercise", "no exercise"],
+     "responses": ["Obesity"]
+    },
+    {"tag":  "obesity_cat_symptoms", "type": "cat",
+     "patterns": ["obesity symptoms", "obesity signs", "obesity indicators", "obesity indications"],
+     "responses": ["The symptoms of Obesity include 'weight gain', 'excess body fat', 'difficulty breathing', 'difficulty moving around'."]
+    },
+    {"tag":  "obesity_cat_treatment", "type": "cat",
+     "patterns": ["treatment for obesity", "treat obesity", "cure obesity", "remedy obesity", "heal obesity", "medication obesity"],
+     "responses": ["Just as humans, decreasing your cat's caloric intake and an increase in exercise in a good way for weight loss. Consult a vet for feeding and diet recommendations."]
+    },
+    {"tag":  "pancreatitis_cat_def", "type": "cat",
+     "patterns": ["pancreatitis", "pancreatitis definition", "pancreatitis meaning"],
+     "responses": ["Pancreatitis occurs when the pancreas becomes inflamed (tender and swollen)."]
+    },
+    {"tag":  "pancreatitis_cat_diagnosis", "type": "cat",
+     "patterns": ["vomiting", "fever", "less energy", "diarrhea", "no appetite", "less appetite"],
+     "responses": ["Pancreatitis"]
+    },
+    {"tag":  "pancreatitis_cat_symptoms", "type": "cat",
+     "patterns": ["pancreatitis symptoms", "pancreatitis signs", "pancreatitis indicators", "pancreatitis indications"],
+     "responses": ["The symptoms of Pancreatitis include 'vomiting', 'fever', 'less energy', 'diarrhea', 'appetite loss'."]
+    },
+    {"tag":  "pancreatitis_cat_treatment", "type": "cat",
+     "patterns": ["treatment for pancreatitis", "treat pancreatitis", "cure pancreatitis", "remedy pancreatitis", "heal pancreatitis", "medication pancreatitis"],
+     "responses": ["Successful management of pancreatitis depends on early diagnosis. Seek professional medical help from vets if you notice symptoms for prompt medical therapy."]
+    },
+    {"tag":  "rabies_cat_def", "type": "cat",
+     "patterns": ["rabies", "rabies definition", "rabies meaning"],
+     "responses": ["Rabies is an incurable virus that attacks the brain and spinal cord. All mammals, including cats and humans, can catch rabies."]
+    },
+    {"tag":  "rabies_cat_diagnosis", "type": "cat",
+     "patterns": ["drooling", "paralysis", "cannot move", "aggression", "aggressive", "excited", "raccoons", "skunks"],
+     "responses": ["Rabies"]
+    },
+    {"tag":  "rabies_cat_symptoms", "type": "cat",
+     "patterns": ["rabies symptoms", "rabies signs", "rabies indicators", "rabies indications"],
+     "responses": ["The symptoms of Rabies include 'drooling', 'paralysis', 'aggression', 'overly excited'."]
+    },
+    {"tag":  "rabies_cat_treatment", "type": "cat",
+     "patterns": ["treatment for rabies", "treat rabies", "cure rabies", "remedy rabies", "heal rabies", "medication rabies"],
+     "responses": ["Unfortunately, there are no ways to treat rabies in cats once symptoms appear. However, you must still seek professional medical help from vets immediately as it is dangerous to humans as well."]
+    },
+    {"tag":  "salmonella_def", "type": "cat",
+     "patterns": ["salmonella", "salmonella definition", "salmonella meaning"],
+     "responses": ["Salmonellosis is an infection found in cats caused by the Salmonella bacteria which spreads through raw food."]
+    },
+    {"tag":  "salmonella_diagnosis", "type": "cat",
+     "patterns": ["fever", "less energy", "diarrhea", "vomiting", "thin body", "anorexia", "sticky stool", "sticky poop", "vaginal discharge", "eating raw meat"],
+     "responses": ["Salmonella"]
+    },
+    {"tag":  "salmonella_symptoms", "type": "cat",
+     "patterns": ["salmonella symptoms", "salmonella signs", "salmonella indicators", "salmonella indications"],
+     "responses": ["The symptoms of Salmonella include 'fever', 'less energy', 'diarrhea', 'vomiting', 'thin body', 'anorexia', 'dehydration', 'sticky stool', 'vaginal discharge'."]
+    },
+    {"tag":  "salmonella_treatment", "type": "cat",
+     "patterns": ["treatment for salmonella", "treat salmonella", "cure salmonella", "remedy salmonella", "heal salmonella", "medication salmonella"],
+     "responses": ["Seek professional medical help from vets as rehydration or blood transfusions are required in severe cases. Ensure that your cat does not eat any raw or undercooked meat in the future."]
+    },
+    {"tag":  "studtail_def", "type": "cat",
+     "patterns": ["stud tail", "stud tail definition", "stud tail meaning"],
+     "responses": ["Stud tail is commonly seen in intact male cats but can also be seen in neutered males and females. It results in skin disease at the base of the tail."]
+    },
+    {"tag":  "studtail_diagnosis", "type": "cat",
+     "patterns": ["oily greasy hair tail", "missing hair on tail", "smelly odor", "bad smell", "skin infection on tail"],
+     "responses": ["Stud Tail"]
+    },
+    {"tag":  "studtail_symptoms", "type": "cat",
+     "patterns": ["stud tail symptoms", "stud tail signs", "stud tail indicators", "stud tail indications"],
+     "responses": ["The symptoms of Stud Tail include 'oily greasy hair at the end of tail', 'missing hair on tail', 'smelly foul odor', 'skin infection on tail'."]
+    },
+    {"tag":  "studtail_treatment", "type": "cat",
+     "patterns": ["treatment for stud tail", "treat stud tail", "cure stud tail", "remedy stud tail", "heal stud tail", "medication stud tail"],
+     "responses": ["You may use antiseborrheic shampoos regularly to keep the area clean. However, you should still seek professional medical help from vets as antibiotics or neutering may be necessary."]
+    },
+    {"tag":  "skincancer_cat_def", "type": "cat",
+     "patterns": ["skin cancer", "skin cancer definition", "skin cancer meaning"],
+     "responses": ["Skin cancer is the out-of-control growth of abnormal cells in the epidermis, the outermost skin layer, caused by unrepaired DNA damage that triggers mutations."]
+    },
+    {"tag":  "skincancer_cat_diagnosis", "type": "cat",
+     "patterns": ["lumps bumps on skin", "ulcer on skin", "black brown grey patches on skin"],
+     "responses": ["Skin Cancer"]
+    },
+    {"tag":  "skincancer_cat_symptoms", "type": "cat",
+     "patterns": ["skin cancer symptoms", "skin cancer signs", "skin cancer indicators", "skin cancer indications"],
+     "responses": ["The symptoms of Skin Cancer include 'lumps or bumps on skinl, 'ulcers on skin', 'black/brown/grey patches on skin'."]
+    },
+    {"tag":  "skincancer_cat_treatment", "type": "cat",
+     "patterns": ["treatment for skin cancer", "treat skin cancer", "cure skin cancer", "remedy skin cancer", "heal skin cancer", "medication skin cancer"],
+     "responses": ["Seek professional medical help from vets as surgery or chemotherapy is required."]
+    },
+    {"tag":  "toxoplasmosis_def", "type": "cat",
+     "patterns": ["toxoplasmosis", "toxoplasmosis definition", "toxoplasmosis meaning"],
+     "responses": ["Toxoplasmosis is a common infection in cats from the microscopic parasite Toxoplasma gondii."]
+    },
+    {"tag":  "toxoplasmosis_diagnosis", "type": "cat",
+     "patterns": ["fatigue", "tired", "ear twitching", "vision problem", "balance problem", "yellow skin", "seizures", "pressing head", "pushing head", "eating wild animals", "eating raw meat", "eating stool", "eating poop"],
+     "responses": ["Toxoplasmosis"]
+    },
+    {"tag":  "toxoplasmosis_symptoms", "type": "cat",
+     "patterns": ["toxoplasmosis symptoms", "toxoplasmosis signs", "toxoplasmosis indicators", "toxoplasmosis indications"],
+     "responses": ["The symptoms of Toxoplasmosis include 'fatigue', 'ear twitching', 'vision and balance problems', 'yellow skin', 'seizures', 'pressing head against wall or floor', 'difficulty eating'."]
+    },
+    {"tag":  "toxoplasmosis_treatment", "type": "cat",
+     "patterns": ["treatment for toxoplasmosis", "treat toxoplasmosis", "cure toxoplasmosis", "remedy toxoplasmosis", "heal toxoplasmosis", "medication toxoplasmosis"],
+     "responses": ["Seek professional medical help from vets as antibiotics or steroid creams may be prescribed."]
+    },
+    {"tag":  "ringworms_def", "type": "cat",
+     "patterns": ["ringworm", "ringworm definition", "ringworm meaning"],
+     "responses": ["Ringworm is the common name given to a fungal infection of the superficial layers of the skin, hair, and nails in cats."]
+    },
+    {"tag":  "ringworms_diagnosis", "type": "cat",
+     "patterns": ["round patches on skin", "hair loss", "crusty patches"],
+     "responses": ["Ringworms"]
+    },
+    {"tag":  "ringworms_symptoms", "type": "cat",
+     "patterns": ["ringworm symptoms", "ringworm signs", "ringworm indicators", "ringworm indications"],
+     "responses": ["The symptoms of Ringworms include 'round patches on skin', 'hair loss', 'crusty patches'."]
+    },
+    {"tag":  "ringworms_treatment", "type": "cat",
+     "patterns": ["treatment for ringworm", "treat ringworm", "cure ringworm", "remedy ringworm", "heal ringworm", "medication ringworm"],
+     "responses": ["Ringworm infections can clear up without treatment but anti-fungal medications prescribed from professional vets may speed up the healing process."]
+    },
+    {"tag":  "breastcancer_cat_def", "type": "cat",
+     "patterns": ["breast cancer", "breast cancer definition", "breast cancer meaning"],
+     "responses": ["Breast cancer is when a mammary tumor develops as a result of abnormal replication of the cells that make up the breast tissue."]
+    },
+    {"tag":  "breastcancer_cat_diagnosis", "type": "cat",
+     "patterns": ["lumps bumps nipple", "ulcer skin", "licking nipple", "strong smell odor"],
+     "responses": ["Breast Cancer"]
+    },
+    {"tag":  "breastcancer_cat_symptoms", "type": "cat",
+     "patterns": ["breast cancer symptoms", "breast cancer signs", "breast cancer indicators", "breast cancer indications"],
+     "responses": ["The symptoms of Breast Cancer include 'lumps or bumps around nipple', 'ulcer on skins', 'licking nipple area', 'strong smell odor'."]
+    },
+    {"tag":  "breastcancer_cat_treatment", "type": "cat",
+     "patterns": ["treatment for breast cancer", "treat breast cancer", "cure breast cancer", "remedy breast cancer", "heal breast cancer", "medication breast cancer"],
+     "responses": ["Seek professional medical help from vets as surgery is the best treatment for cats with mammary tumors."]
+    },
+    {"tag":  "anemia_cat_def", "type": "cat",
+     "patterns": ["anemia", "anemia definition", "anemia meaning"],
+     "responses": ["Anemia is a medical term referring to a reduced number of circulating red blood cells (RBC's), hemoglobin (Hb), or both."]
+    },
+    {"tag":  "anemia_cat_diagnosis", "type": "cat",
+     "patterns": ["pale white gums", "less energy", "tired", "fatigue", "bloody nose", "nose bleed", "bloody blood poop", "bloody blood stool", "bloody blood urine", "bloody blood pee", "blood in vomit"],
+     "responses": ["Anemia"]
+    },
+    {"tag":  "anemia_cat_symptoms", "type": "cat",
+     "patterns": ["anemia symptoms", "anemia signs", "anemia indicators", "anemia indications"],
+     "responses": ["The symptoms of Anemia include 'pale or white gums', 'less energy', 'tired', 'bloody nose', 'blood in stool/urine/vomit'."]
+    },
+    {"tag":  "anemia_cat_treatment", "type": "cat",
+     "patterns": ["treatment for anemia", "treat anemia", "cure anemia", "remedy anemia", "heal anemia", "medication anemia"],
+     "responses": ["Seek professional medical help from vets as blood tests must be performed before treatment is given. In severe cases, blood transfusion or surgery may be required."]
+    },
+    {"tag":  "dysplasia_cat_def", "type": "cat",
+     "patterns": ["hip dysplasia", "hip dysplasia definition", "hip dysplasia meaning"],
+     "responses": ["Hip dysplasia is the failure of the hip joints to develop normally (known as malformation), gradually deteriorating and leading to loss of function of the hip joints."]
+    },
+    {"tag":  "dysplasia_cat_diagnosis", "type": "cat",
+     "patterns": ["refuse run", "refuse jump", "refuse stairs", "small thigh", "big shoulders", "less active", "obese", "overweight", "fat"],
+     "responses": ["Hip Dysplasia"]
+    },
+    {"tag":  "dysplasia_cat_symptoms", "type": "cat",
+     "patterns": ["hip dysplasia symptoms", "hip dysplasia signs", "hip dysplasia indicators", "hip dysplasia indications"],
+     "responses": ["The symptoms of  include 'reluctance to run jump or climb stairs', 'loss of muscle mass in thighs', 'shoulder muscle growth', 'less active'."]
+    },
+    {"tag":  "dysplasia_cat_treatment", "type": "cat",
+     "patterns": ["treatment for hip dysplasia", "treat hip dysplasia", "cure hip dysplasia", "remedy hip dysplasia", "heal hip dysplasia", "medication hip dysplasia"],
+     "responses": ["Seek professional medical help from vets. Your cat may be treated on an outpatient basis unless a surgery is required."]
+    },
+    {"tag":  "bonecancer_cat_def", "type": "cat",
+     "patterns": ["bone cancer", "bone cancer definition", "bone cancer meaning"],
+     "responses": ["Osteosarcoma is a malignant tumor of the bone. Osteosarcomas are tumors that arise from the abnormal production of cells that create and break down bone."]
+    },
+    {"tag":  "bonecancer_cat_diagnosis", "type": "cat",
+     "patterns": ["swelling swollen legs", "less energy", "refuse run", "refuse play", "lameness", "limping"],
+     "responses": ["Bone Cancer"]
+    },
+    {"tag":  "bonecancer_cat_symptoms", "type": "cat",
+     "patterns": ["bone cancer symptoms", "bone cancer signs", "bone cancer indicators", "bone cancer indications"],
+     "responses": ["The symptoms of Bone Cancer include 'swelling of legs', 'less energy', 'reluctant to walk or play', 'lameness', 'limping'."]
+    },
+    {"tag":  "bonecancer_cat_treatment", "type": "cat",
+     "patterns": ["treatment for bone cancer", "treat bone cancer", "cure bone cancer", "remedy bone cancer", "heal bone cancer", "medication bone cancer"],
+     "responses": ["Seek professional medical help from vets. In order to gain tumor control, amputation of the affected limb may be recommended."]
+    },
+    {"tag":  "dysautonomia_def", "type": "cat",
+     "patterns": ["dysautonomia", "dysautonomia definition", "dysautonomia meaning"],
+     "responses": ["Feline dysautonomia is characterized by widespread degeneration of the autonomic nervous system, leading to esophageal distension and/or dysfunction, gastric and bowel distension and hypomotility, urinary bladder distension, and pupillary dysfunction."]
+    },
+    {"tag":  "dysautonomia_diagnosis", "type": "cat",
+     "patterns": ["anorexia", "thin body", "dilated pupils", "third eyelid", "difficulty breathing", "hard to breathe", "drooping eyelids"],
+     "responses": ["Dysautonomia"]
+    },
+    {"tag":  "dysautonomia_symptoms", "type": "cat",
+     "patterns": ["dysautonomia symptoms", "dysautonomia signs", "dysautonomia indicators", "dysautonomia indications"],
+     "responses": ["The symptoms of Dysautonomia include 'anorexia', 'thin body', 'dilated pupils', 'third eyelid', 'difficulty breathing', 'drooping eyelids'"]
+    },
+    {"tag":  "dysautonomia_treatment", "type": "cat",
+     "patterns": ["treatment for dysautonomia", "treat dysautonomia", "cure dysautonomia", "remedy dysautonomia", "heal dysautonomia", "medication dysautonomia"],
+     "responses": ["Unfortunately, there is no effective treatment for feline dysautonomia. However, you should still seek professional medical help from vets for supportive nursing care."]
+    },
+    {"tag":  "facialparalysis_cat_def", "type": "cat",
+     "patterns": ["facial nerve paralysis", "facial nerve paralysis definition", "facial nerve paralysis meaning"],
+     "responses": ["Facial nerve paresis is a dysfunction of the seventh cranial nerve, the facial nerve. This condition is evidenced by paralysis or weakness of the muscles of the ears, eyelids, lips, and nostrils."]
+    },
+    {"tag":  "facialparalysis_cat_diagnosis", "type": "cat",
+     "patterns": ["messy eating", "drooling", "food falling from mouth", "difficulty closing eyes", "ear drooping", "lip drooping", "face spasms", "uneven face", "face injury or trauma"],
+     "responses": ["Facial Nerve Paralysis"]
+    },
+    {"tag":  "facialparalysis_cat_symptoms", "type": "cat",
+     "patterns": ["facial nerve paralysis symptoms", "facial nerve paralysis signs", "facial nerve paralysis indicators", "facial nerve paralysis indications"],
+     "responses": ["The symptoms of Facial Nerve Paralysis include 'messy eating', 'drooling', 'food falling from mouth', 'cant close eyes', 'ear and lip drooping', 'face spasms', 'facial asymmetry'."]
+    },
+    {"tag":  "facialparalysis_cat_treatment", "type": "cat",
+     "patterns": ["treatment for facial nerve paralysis", "treat facial nerve paralysis", "cure facial nerve paralysis", "remedy facial nerve paralysis", "heal facial nerve paralysis", "medication facial nerve paralysis"],
+     "responses": ["Seek professional medical help from vets. Treatment will most likely be done on an outpatient basis. However, hospitalization may be needed for testing procedures."]
+    },
+    {"tag":  "liverdisease_cat_def", "type": "cat",
+     "patterns": ["liver disease", "liver disease definition", "liver disease meaning"],
+     "responses": ["Liver Disease is any disturbance of liver function that causes illness."]
+    },
+    {"tag":  "liverdisease_cat_diagnosis", "type": "cat",
+     "patterns": ["yellow skin", "yellow eyes", "less energy", "thirsty", "always urinate", "always pee", "weight loss", "vomiting", "diarrhea"],
+     "responses": ["Liver Disease"]
+    },
+    {"tag":  "liverdisease_cat_symptoms", "type": "cat",
+     "patterns": ["liver disease symptoms", "liver disease signs", "liver disease indicators", "liver disease indications"],
+     "responses": ["The symptoms of Liver Disease include 'yellow skin or eyes', 'less energy', 'always thirsty', 'always urinates', 'weight loss', 'vomiting', 'diarrhea'."]
+    },
+    {"tag":  "liverdisease_cat_treatment", "type": "cat",
+     "patterns": ["treatment for liver disease", "treat liver disease", "cure liver disease", "remedy liver disease", "heal liver disease", "medication liver disease"],
+     "responses": ["Seek professional medical help from vets as specific treatment for the particular liver disease will depend on the diagnosis. A suitable change in diet is also often helpful in delaying the progression of disease."]
+    },
+    {"tag":  "cardiomyopathy_def", "type": "cat",
+     "patterns": ["hypertrophic cardiomyopathy", "hypertrophic cardiomyopathy definition", "hypertrophic cardiomyopathy meaning"],
+     "responses": ["Feline Hypertrophic Cardiomyopathy (HCM) is a condition that causes the muscular walls of a cat’s heart to thicken, decreasing the heart’s efficiency and sometimes creating symptoms in other parts of the body."]
+    },
+    {"tag":  "cardiomyopathy_diagnosis", "type": "cat",
+     "patterns": ["less energy", "increased breathing rate", "fast breathing", "weak", "fainting", "faint", "paralysis legs"],
+     "responses": ["Hypertrophic Cardiomyopathy"]
+    },
+    {"tag":  "cardiomyopathy_symptoms", "type": "cat",
+     "patterns": ["hypertrophic cardiomyopathy symptoms", "hypertrophic cardiomyopathy signs", "hypertrophic cardiomyopathy indicators", "hypertrophic cardiomyopathy indications"],
+     "responses": ["The symptoms of Hypertrophic Cardiomyopathy include 'less energy', 'increased breathing rate', 'weakness', 'fainting', 'paralysis in legs'."]
+    },
+    {"tag":  "cardiomyopathy_treatment", "type": "cat",
+     "patterns": ["treatment for hypertrophic cardiomyopathy", "treat hypertrophic cardiomyopathy", "cure hypertrophic cardiomyopathy", "remedy hypertrophic cardiomyopathy", "heal hypertrophic cardiomyopathy", "medication hypertrophic cardiomyopathy"],
+     "responses": ["Seek professional medical help from vets as medications may be prescribed to manage the condition of your cat in the form of injections or oral drugs."]
+    },
+    {"tag":  "lungworm_def", "type": "cat",
+     "patterns": ["lungworm", "lungworm definition", "lungworm meaning"],
+     "responses": ["A lungworm is a type of parasite that lives in the airways and small arteries of the lungs."]
+    },
+    {"tag":  "lungworm_diagnosis", "type": "cat",
+     "patterns": ["chronic coughing", "serious coughing", "difficulty breathing", "hard to breathe", "increased breathing rate", "fast breathing", "drinking dirty water", "eating wild animals"],
+     "responses": ["Lungworms"]
+    },
+    {"tag":  "lungworm_symptoms", "type": "cat",
+     "patterns": ["lungworm symptoms", "lungworm signs", "lungworm indicators", "lungworm indications"],
+     "responses": ["The symptoms of Lungworms include 'chronic coughing', 'difficulty breathing', 'increased breathing rate'."]
+    },
+    {"tag":  "lungworm_treatment", "type": "cat",
+     "patterns": ["treatment for lungworm", "treat lungworm", "cure lungworm", "remedy lungworm", "heal lungworm", "medication lungworm"],
+     "responses": ["Seek professional medical help from vets as parasiticides will likely be prescribed to handle the infection."]
+    },
+    {"tag":  "pneumonia_def", "type": "cat",
+     "patterns": ["pneumonia", "pneumonia definition", "pneumonia meaning"],
+     "responses": ["Pneumonia is an inflammation in the lungs, which causes difficulty breathing and a decreased level of oxygen in the blood."]
+    },
+    {"tag":  "pneumonia_diagnosis", "type": "cat",
+     "patterns": ["coughing", "loud breathing", "wheezing", "blowing air through lips", "blue lips", "fever", "yellow nose discharge", "yellow nose liquid"],
+     "responses": ["Pneumonia"]
+    },
+    {"tag":  "pneumonia_symptoms", "type": "cat",
+     "patterns": ["pneumonia symptoms", "pneumonia signs", "pneumonia indicators", "pneumonia indications"],
+     "responses": ["The symptoms of Pneumonia include 'deep cough', 'loud breathing', 'wheezing', 'blowing air through lips', 'blue lips', 'fever', 'yellowish nasal discharge'."]
+    },
+    {"tag":  "pneumonia_treatment", "type": "cat",
+     "patterns": ["treatment for pneumonia", "treat pneumonia", "cure pneumonia", "remedy pneumonia", "heal pneumonia", "medication pneumonia"],
+     "responses": ["Seek professional medical help from vets as oxygen or fluid therapy are needed to stabilize your pet. Hospitalization may also be required in severe cases."]
+    },
+    {"tag":  "tonsillitis_def", "type": "cat",
+     "patterns": ["tonsillitis", "tonsillitis definition", "tonsillitis meaning"],
+     "responses": ["Tonsillitis is inflammation of the tonsils and is rare in cats. When seen, it is usually caused by another underlying condition."]
+    },
+    {"tag":  "tonsillitis_diagnosis", "type": "cat",
+     "patterns": ["drooling", "no appetite", "less appetite", "difficulty swallowing", "hard to swallow", "fever", "sore throat", "red swollen tonsils"],
+     "responses": ["Tonsillitis"]
+    },
+    {"tag":  "tonsillitis_symptoms", "type": "cat",
+     "patterns": ["tonsillitis symptoms", "tonsillitis signs", "tonsillitis indicators", "tonsillitis indications"],
+     "responses": ["The symptoms of Tonsillitis include 'drooling', 'appetite loss', 'difficulty swallowing', 'fever', 'sore throat', 'red swollen tonsils'."]
+    },
+    {"tag":  "tonsillitis_treatment", "type": "cat",
+     "patterns": ["treatment for tonsillitis", "treat tonsillitis", "cure tonsillitis", "remedy tonsillitis", "heal tonsillitis", "medication tonsillitis"],
+     "responses": ["Seek professional medical help from vets to determine the cause of tonsil inflammation. Suitable antibiotics or painkillers may be prescribed to deal with the infection."]
+    },
+    {"tag":  "cryptosporidiosis_def", "type": "cat",
+     "patterns": ["cryptosporidiosis", "cryptosporidiosis definition", "cryptosporidiosis meaning"],
+     "responses": ["Cryptosporidium is an intestinal parasite that is commonly ingested through contaminated water, food or feces which results in the diseased condition, cryptosporidiosis."]
+    },
+    {"tag":  "cryptosporidiosis_diagnosis", "type": "cat",
+     "patterns": ["fever", "diarrhea", "less appetite", "no appetite", "drinking dirty water", "eating dirty food", "swallowing poop stool"],
+     "responses": ["Cryptosporidiosis"]
+    },
+    {"tag":  "cryptosporidiosis_symptoms", "type": "cat",
+     "patterns": ["cryptosporidiosis symptoms", "cryptosporidiosis signs", "cryptosporidiosis indicators", "cryptosporidiosis indications"],
+     "responses": ["The symptoms of Cryptosporidiosis include 'fever', 'diarrhea', 'doesn’t want to eat', 'doesn’t want to exercise'."]
+    },
+    {"tag":  "cryptosporidiosis_treatment", "type": "cat",
+     "patterns": ["treatment for cryptosporidiosis", "treat cryptosporidiosis", "cure cryptosporidiosis", "remedy cryptosporidiosis", "heal cryptosporidiosis", "medication cryptosporidiosis"],
+     "responses": ["It is recommended to limit food until the diarrhea has stopped along with an increase in fluids to prevent dehydration. You may obtain prescribed medications from your vet."]
+    },
+    {"tag":  "felinecognitive_def", "type": "cat",
+     "patterns": ["feline cognitive dysfunction", "feline cognitive dysfunction definition", "feline cognitive dysfunction meaning"],
+     "responses": ["Feline cognitive dysfunction (also known as Cat Dementia) syndrome is a condition related to the aging of a cat's brain, which ultimately leads to changes in awareness, deficits in learning and memory, and decreased responsiveness to stimuli."]
+    },
+    {"tag":  "felinecognitive_diagnosis", "type": "cat",
+     "patterns": ["confusion", "confused", "excessive licking", "always licking", "forgot house rules", "forgot training", "slow", "acts different", "behaving different", "old"],
+     "responses": ["Feline Cognitive Dysfunction"]
+    },
+    {"tag":  "felinecognitive_symptoms", "type": "cat",
+     "patterns": ["feline cognitive dysfunction symptoms", "feline cognitive dysfunction signs", "feline cognitive dysfunction indicators", "feline cognitive dysfunction indications"],
+     "responses": ["The symptoms of Feline Cognitive Dysfunction include 'confusion', 'excessive licking', 'forgot house rules or training', 'slow', 'changes in sleep cycle', 'changes in activities'."]
+    },
+    {"tag":  "felinecognitive_treatment", "type": "cat",
+     "patterns": ["treatment for feline cognitive dysfunction", "treat feline cognitive dysfunction", "cure feline cognitive dysfunction", "remedy feline cognitive dysfunction", "heal feline cognitive dysfunction", "medication feline cognitive dysfunction"],
+     "responses": ["Lifelong therapy and support is required. You may create a daily routine of exercise, play and training for your pet to slow the cognitive decline. You can also seek medical help from vets for medication and behavioral therapies."]
+    },
+    {"tag":  "lyme_cat_def", "type": "cat",
+     "patterns": ["lyme disease", "lyme disease definition", "lyme disease meaning"],
+     "responses": ["Lyme disease, also known as Lyme borreliosis, is a bacterial illness that is transmitted by certain species of ticks."]
+    },
+    {"tag":  "lyme_cat_diagnosis", "type": "cat",
+     "patterns": ["avoid touch", "lameness", "stiffness in leg", "stiff", "swollen leg", "limping", "ticks"],
+     "responses": ["Lyme Disease"]
+    },
+    {"tag":  "lyme_cat_symptoms", "type": "cat",
+     "patterns": ["lyme disease symptoms", "lyme disease signs", "lyme disease indicators", "lyme disease indications"],
+     "responses": ["The symptoms of Lyme Disease include 'sensitive to touch', 'lameness', 'stiffness in leg', 'swollen leg'."]
+    },
+    {"tag":  "lyme_cat_treatment", "type": "cat",
+     "patterns": ["treatment for lyme disease", "treat lyme disease", "cure lyme disease", "remedy lyme disease", "heal lyme disease", "medication lyme disease"],
+     "responses": ["Seek professional medical help from vets to obtain suitable antibiotics. It is also important to keep your cat warm and dry while controlling its activities."]
+    },
+    {"tag":  "poisoning_cat_def", "type": "cat",
+     "patterns": ["poisoning", "poisoning definition", "poisoning meaning"],
+     "responses": ["Poisoning occurs when your pet ingests some item or material that is toxic or poisonous to its body."]
+    },
+    {"tag":  "poisoning_cat_diagnosis", "type": "cat",
+     "patterns": ["vomiting", "diarrhea", "drooling", "difficulty breathing", "hard to breathe", "seizures", "eating poisonous unknown items"],
+     "responses": ["Poisoning"]
+    },
+    {"tag":  "poisoning_cat_symptoms", "type": "cat",
+     "patterns": ["poisoning symptoms", "poisoning signs", "poisoning indicators", "poisoning indications"],
+     "responses": ["The symptoms of Poisoning include 'vomiting', 'diarrhea', 'drooling', 'difficulty breathing', 'seizures'."]
+    },
+    {"tag":  "poisoning_cat_treatment", "type": "cat",
+     "patterns": ["treatment for poisoning", "treat poisoning", "cure poisoning", "remedy poisoning", "heal poisoning", "medication poisoning"],
+     "responses": ["Seek professional medical help from vets immediately as it may be life threatening. Be sure to inform your vet what item was eaten if possible."]
+    },
+    {"tag":  "heatstroke_cat_def", "type": "cat",
+     "patterns": ["heat stroke", "heat stroke definition", "heat stroke meaning"],
+     "responses": ["Heat stroke is a term commonly used for hyperthermia or elevated body temperature."]
+    },
+    {"tag":  "heatstroke_cat_diagnosis", "type": "cat",
+     "patterns": ["vomiting", "less energy", "sweat feet paws", "drooling", "panting", "increased breathing rate", "fast breathing", "fainting", "faint", "hot environment", "hot area"],
+     "responses": ["Heat Stroke"]
+    },
+    {"tag":  "heatstroke_cat_symptoms", "type": "cat",
+     "patterns": ["heat stroke symptoms", "heat stroke signs", "heat stroke indicators", "heat stroke indications"],
+     "responses": ["The symptoms of Heat Stroke include 'vomiting', 'less energy', 'sweaty feet', 'drooling', 'panting', 'elevated breathing', 'fainting'."]
+    },
+    {"tag":  "heatstroke_cat_treatment", "type": "cat",
+     "patterns": ["treatment for heat stroke", "treat heat stroke", "cure heat stroke", "remedy heat stroke", "heal heat stroke", "medication heat stroke"],
+     "responses": ["Immediately soak your pet with cool (not cold) water and let it drink all the water it wants. Then, seek professional medical help from vets quickly."]
+    },
+    {"tag":  "amyloidosis_def", "type": "cat",
+     "patterns": ["amyloidosis", "amyloidosis definition", "amyloidosis meaning"],
+     "responses": ["Amyloidosis occurs when proteins called amyloids are deposited outside of cells in various tissues and organs, causing tissue and organ dysfunction."]
+    },
+    {"tag":  "amyloidosis_diagnosis", "type": "cat",
+     "patterns": ["mouth ulcers", "extreme weight loss", "thin", "skinny", "vomiting", "fainting", "faint", "pale white gums"],
+     "responses": ["Amyloidosis"]
+    },
+    {"tag":  "amyloidosis_symptoms", "type": "cat",
+     "patterns": ["amyloidosis symptoms", "amyloidosis signs", "amyloidosis indicators", "amyloidosis indications"],
+     "responses": ["The symptoms of Amyloidosis include 'mouth ulcers', 'extreme weight loss', 'vomiting', 'dehydration', 'fainting', 'pale gums'."]
+    },
+    {"tag":  "amyloidosis_treatment", "type": "cat",
+     "patterns": ["treatment for amyloidosis", "treat amyloidosis", "cure amyloidosis", "remedy amyloidosis", "heal amyloidosis", "medication amyloidosis"],
+     "responses": ["Seek professional medical help from vets as hospitalization with IV fluids may be required if your cat develops kidney failure."]
+    },
+    {"tag":  "hypertension_def", "type": "cat",
+     "patterns": ["hypertension", "hypertension definition", "hypertension meaning"],
+     "responses": ["Hypertension is the medical term for high blood pressure. A cat is generally thought to be hypertensive when its systolic blood pressure is above 160mm Hg."]
+    },
+    {"tag":  "hypertension_diagnosis", "type": "cat",
+     "patterns": ["red bloodshot eyes", "blind", "seizures", "fainting", "faint", "nose bleed", "bloody nose"],
+     "responses": ["Hypertension"]
+    },
+    {"tag":  "hypertension_symptoms", "type": "cat",
+     "patterns": ["hypertension symptoms", "hypertension signs", "hypertension indicators", "hypertension indications"],
+     "responses": ["The symptoms of Hypertension include 'red bloodshot eyes', 'blindness', 'seizures', 'fainting', 'nose bleeds'."]
+    },
+    {"tag":  "hypertension_treatment", "type": "cat",
+     "patterns": ["treatment for hypertension", "treat hypertension", "cure hypertension", "remedy hypertension", "heal hypertension", "medication hypertension"],
+     "responses": ["Seek professional medical help from vets to obtain the most recommended treatment options for your pet."]
+    },
+    {"tag":  "nocardiosis_def", "type": "cat",
+     "patterns": ["nocardiosis", "nocardiosis definition", "nocardiosis meaning"],
+     "responses": ["Nocardiosis is an uncommon infectious disease that affects several body systems, including the respiratory, musculoskeletal, and nervous systems."]
+    },
+    {"tag":  "nocardiosis_diagnosis", "type": "cat",
+     "patterns": ["swollen gums", "bad breath", "smelly breath", "coughing blood", "pus", "patches skin", "open wounds injury", "swallowing soil", "swallowing dirt"],
+     "responses": ["Nocardiosis"]
+    },
+    {"tag":  "nocardiosis_symptoms", "type": "cat",
+     "patterns": ["nocardiosis symptoms", "nocardiosis signs", "nocardiosis indicators", "nocardiosis indications"],
+     "responses": ["The symptoms of Nocardiosis include 'swollen gums', 'bad breath', 'coughing blood', 'pus lesions', 'patches on skin'."]
+    },
+    {"tag":  "nocardiosis_treatment", "type": "cat",
+     "patterns": ["treatment for nocardiosis", "treat nocardiosis", "cure nocardiosis", "remedy nocardiosis", "heal nocardiosis", "medication nocardiosis"],
+     "responses": ["Seek professional medical help from vets to obtain prescribed antibiotics. However, surgery to remove infected tissue may also be recommended."]
+    }
+]}

@@ -1,0 +1,914 @@
+{"intents": [
+    {"tag":  "greetings", "type": "general",
+     "patterns": ["hi", "hi there", "hello", "yo", "whats up", "anyone there", "good morning", "good afternoon", "good evening", "nice to meet you", "greetings"],
+     "responses": ["Greetings! How may I assist you today?", "Hello! What can I do for you today?", "Hi there! Anything on your mind?", "Hi, how can I help you today?"]
+    },
+    {"tag":  "identity", "type": "general",
+     "patterns": ["name", "purpose", "identity", "what should i call you?"],
+     "responses": ["My name is PawBot, I am a medical assistance chatbot for pet diseases!", "I'm PawBot, I can answer your questions regarding pet diseases, symptoms and treatments!"]
+    },
+    {"tag":  "goodbye", "type": "general",
+     "patterns": ["bye", "bye bye", "goodbye", "see ya", "see you next time", "have a good day", "leaving", "see you later"],
+     "responses": ["Goodbye! I wish good health to you and your pet.", "See ya! You know where to find me.", "Goodbye and take care!"]
+    },
+    {"tag":  "unsure", "type": "general",
+     "patterns": [""],
+     "responses": ["I'm sorry, could you rephrase your question or provide more info? If this occurs again, it means I may not have the sufficient knowledge to answer your question :(."]
+    },
+    {"tag":  "okay", "type": "general",
+     "patterns": ["okay", "ok", "k", "alright", "yes", "go on", "continue", "proceed"],
+     "responses": ["Let us proceed", "Let us continue"]
+    },
+    {"tag":  "thanks", "type": "general",
+     "patterns": ["thank you", "i am grateful", "i appreciate it", "much obliged", "thankful"],
+     "responses": ["You are very welcome!", "I am happy to be of assistance!", "Welcome! I'm glad I was able to help"]
+    },
+    {"tag":  "help", "type": "general",
+     "patterns": ["i have some questions", "can you help me", "i need some information", "i want to ask something", "i need assistance", "excuse me"],
+     "responses": ["I am ready to help, ask me questions regarding pet diseases, symptoms or treatment and I will do my best to assist you!"]
+    },
+    {"tag":  "symptoms_help", "type": "general",
+     "patterns": ["my pet has symptoms", "my dog has symptoms", "my cat has symptoms", "i want to ask about symptoms", "i have questions about symptoms"],
+     "responses": ["I can help you, tell me all the noticed symptoms of your pet."]
+    },
+    {"tag":  "treatment_help", "type": "general",
+     "patterns": ["my pet needs treatment", "my dog needs treatment", "my cat needs treatment", "i want to ask about treatment", "i have questions about treatment"],
+     "responses": ["I can help you, tell me what health condition your pet is facing."]
+    },
+    {"tag":  "creator", "type": "general",
+     "patterns": ["who created you", "who is your creator", "who made you", "who is your maker", "who developed you", "who is your developer"],
+     "responses": ["I am developed by Sean Lau Jian-An, a software engineering student from TARUC."]
+    },
+    {"tag":  "consolation", "type": "general",
+     "patterns": ["scared", "sad", "worry", "terrified", "stress", "going to be fine"],
+     "responses": ["I understand what you're feeling, but please do not worry. Consult your veterinarian for professional help. Your pet is going to be alright!"]
+    },
+    {"tag":  "nutrition", "type": "dog",
+     "patterns": ["diet advice tips", "nutrition advice tips", "what should i feed", "best food", "cannot eat", "what food are bad"],
+     "responses": ["It is recommended for your dog to receive a well balanced diet of protein, carbohydrates, fat, minerals and water. Experts recommend commercial dog food as the best way to feed your dog. Please avoid: Candy, Onions, Garlic, Dairy Products, Alcohol, Grapes, Caffeine, Chocolate, Bones, Raw food, Peaches."]
+    },
+    {"tag":  "enquiry_centre", "type": "general",
+     "patterns": ["where can i go for treatment", "clinic", "treatment centre", "hospital", "veterinarian", "vet", "treatment location"],
+     "responses": ["Could you tell me which state do you live in? (i.e.: Selangor/Perlis/Kedah)"]
+    },
+    {"tag":  "sarawak_centre", "type": "general",
+     "patterns": ["sarawak"],
+     "responses": ["The top 5 Sarawak veterinary centres that I have found are 'Animal Central Veterinary Clinic', 'Dr Zawani Animal Clinic', 'City Veterinary Centre', 'Lee Veterinary Hospital' and 'PetLife Veterinary Clinic'. Do Google them if you are interested."]
+    },
+    {"tag":  "sabah_centre", "type": "general",
+     "patterns": ["sabah"],
+     "responses": ["The top 5 Sabah veterinary centres that I have found are 'Kinabalu Animal Clinic', 'SVSS Animal Clinic', 'SAMS Animals Centre', 'Borneo Veterinary Centre' and 'Shakalaka Vet Care and Surgery'. Do Google them if you are interested."]
+    },
+    {"tag":  "selangor_centre", "type": "general",
+     "patterns": ["selangor"],
+     "responses": ["The top 5 Selangor veterinary centres that I have found are 'Animal Clinic SS14', 'Pets Health Veterinary Clinic and Surgery', 'Yee Veterinary Clinic and Surgery', 'Gasing Veterinary Hospital' and 'Philos Veterinary Clinic'. Do Google them if you are interested."]
+    },
+    {"tag":  "johor_centre", "type": "general",
+     "patterns": ["johor"],
+     "responses": ["The top 5 Johor veterinary centres that I have found are 'Koh Animal Clinic and Surgery', 'Thats Animal Centre', 'JB Animal Medical Clinic', 'Klinik Haiwan Dr Ain' and 'South Paws Veterinary Clinic'. Do Google them if you are interested."]
+    },
+    {"tag":  "kedah_centre", "type": "general",
+     "patterns": ["kedah"],
+     "responses": ["The top 5 Kedah veterinary centres that I have found are 'PetAnd'I Animal Clinic', 'Animal Clinic Sg Petani', 'Furmily Vet Clinic', 'Klinik Haiwan dan Surgeri Darul Aman' and 'Loving Animal Clinic'. Do Google them if you are interested."]
+    },
+    {"tag":  "penang_centre", "type": "general",
+     "patterns": ["penang"],
+     "responses": ["The top 5 Penang veterinary centres that I have found are 'AcuVet Veterinary Clinic', 'Ark Veterinary Centre', 'Grace Veterinary Centre', 'Neko Inu Veterinary Centre' and 'Cuddles Veterinary Clinic'. Do Google them if you are interested."]
+    },
+    {"tag":  "perak_centre", "type": "general",
+     "patterns": ["perak"],
+     "responses": ["The top 5 Perak veterinary centres that I have found are 'Ipoh Garden Animal Clinic', 'Klinik Haiwan Menglembu', 'Jean Veterinary Centre', 'Klinik Tee Veterinary' and 'Maxwell Animal Clinic'. Do Google them if you are interested."]
+    },
+    {"tag":  "perlis_centre", "type": "general",
+     "patterns": ["perlis"],
+     "responses": ["The top 3 Perlis veterinary centres that I have found are 'Pusat Perkhidmatan Veterinar Arau', 'Perlis Veterinary Services Department' and 'Klinik Haiwan dan Surgeri Kangar'. Do Google them if you are interested."]
+    },
+    {"tag":  "kelantan_centre", "type": "general",
+     "patterns": ["kelantan"],
+     "responses": ["The top 5 Kelantan veterinary centres that I have found are 'Vet o Vet Kota Bharu', 'Klinik Haiwan Kubang Kerian', 'V Care Animal Clinic', 'UMK Veterinary Clinic' and 'Klinik Haiwan Kota'. Do Google them if you are interested."]
+    },
+    {"tag":  "ns_centre", "type": "general",
+     "patterns": ["negeri sembilan"],
+     "responses": ["The top 5 Negeri Sembilan veterinary centres that I have found are 'Goh and Tan Veterinary Clinic', 'Klinik Haiwan Ee', 'Uptown Avenue Veterinary Clinic', 'Rasah Veterinary Clinic' and 'Klinik Haiwan Senawang'. Do Google them if you are interested."]
+    },
+    {"tag":  "pahang_centre", "type": "general",
+     "patterns": ["pahang"],
+     "responses": ["The top 5 Pahang veterinary centres that I have found are 'Dr Bhajan Singh Klinik Haiwan Pahang', 'Klinik Haiwan Kuantan', 'Kasah Vet', 'East Coast Animal Medical Centre' and 'Klinik Veterinar Vetcare RP'. Do Google them if you are interested."]
+    },
+    {"tag":  "terengganu_centre", "type": "general",
+     "patterns": ["terengganu"],
+     "responses": ["The top 5 Terengganu veterinary centres that I have found are 'DrNor Veterinary Clinic', 'Tawakkal Veterinary Services', 'Klinik Veterinar Haiwanku', 'Klinik Veterinar Kuala Ibai' and 'Klinik Haiwan Kemaman'. Do Google them if you are interested."]
+    },
+    {"tag":  "melaka_centre", "type": "general",
+     "patterns": ["melaka"],
+     "responses": ["The top 5 Melaka veterinary centres that I have found are 'My Animal Clinic & Surgery', 'Dr Jeya Vet Clinic Melaka', 'Afiyah Vet Cheng', 'Kim Veterinary Clinic & Surgery' and 'Maju Animal Clinic'. Do Google them if you are interested."]
+    },
+    {"tag":  "kl_centre", "type": "general",
+     "patterns": ["kuala lumpur"],
+     "responses": ["The top 5 Kuala Lumpur veterinary centres that I have found are 'VPAC Animal Clinic Kuchai Lama', 'Teoh Animal Clinic', 'C&D Veterinary Clinic', 'TTDI Veterinary Clinic' and 'Bangsar Veterinary Clinic and Surgery'. Do Google them if you are interested."]
+    },
+    {"tag":  "malaysia", "type": "general",
+     "patterns": ["malaysia"],
+     "responses": ["Hello Malaysian, tell me which state you are living in for me to suggest a treatment location for your pet."]
+    },
+    {"tag":  "analgland_dog_def", "type": "dog",
+     "patterns": ["anal gland disease", "anal gland disease definition", "anal gland disease meaning"],
+     "responses": ["Anal gland disease is the swelling of anal sacs due to inflammation of the ducts. It can cause pain when your pet passes feces."]
+    },
+    {"tag":  "analgland_dog_diagnosis", "type": "dog",
+     "patterns": ["licking ear", "biting ear", "bad smell", "bad odor", "smelly", "constipation", "pain pooping", "pain passing stools", "pain toilet", "dragging butt on floor", "rubbing butt on floor"],
+     "responses": ["Anal Gland Disease"]
+    },
+    {"tag":  "analgland_dog_symptoms", "type": "dog",
+     "patterns": ["anal gland disease symptoms", "anal gland disease signs", "anal gland disease indicators", "anal gland disease indications"],
+     "responses": ["The symptoms of Anal gland disease include 'licking or biting ear', 'bad smell or odor', 'constipation', 'pain during defecation', 'dragging rear on the ground'."]
+    },
+    {"tag":  "analgland_dog_treatment", "type": "dog",
+     "patterns": ["treatment anal gland disease", "treat anal gland disease", "cure anal gland disease", "remedy anal gland disease", "heal anal gland disease", "medication anal gland disease"],
+     "responses": ["You could add more fiber to your dog's diet. Seek professional medical help from vets as surgery may be required in serious cases."]
+    },
+    {"tag":  "arthritis_dog_def", "type": "dog",
+     "patterns": ["arthritis", "arthritis definition", "arthritis meaning"],
+     "responses": ["Osteoarthritis, also referred to as Degenerative Joint Disease (DJD), is a progressively worsening inflammation of the joint caused by the deterioration of cartilage."]
+    },
+    {"tag":  "arthritis_dog_diagnosis", "type": "dog",
+     "patterns": ["stiffness", "stiff", "limping", "weight gain", "pain when touched", "loss muscle mass", "refuse play", "old"],
+     "responses": ["Arthritis"]
+    },
+    {"tag":  "arthritis_dog_symptoms", "type": "dog",
+     "patterns": ["arthritis symptoms", "arthritis signs", "arthritis indicators", "arthritis indications"],
+     "responses": ["The symptoms of Anal gland disease include 'stiffness', 'limping', 'weight gain', 'pain when touched', 'loss of muscle mass', 'refusing to jump or play'."]
+    },
+    {"tag":  "arthritis_dog_treatment", "type": "dog",
+     "patterns": ["treatment arthritis", "treat arthritis", "cure arthritis", "remedy arthritis", "heal arthritis", "medication arthritis"],
+     "responses": ["Seek professional medical help from vets to perform a full physical examination."]
+    },
+    {"tag":  "bladderstones_dog_def", "type": "dog",
+     "patterns": ["bladder stones", "bladder stones definition", "bladder stones meaning"],
+     "responses": ["Bladder stones are hard masses of minerals which are formed in the bladder which may cause problems in emptying the bladder."]
+    },
+    {"tag":  "bladderstones_dog_diagnosis", "type": "dog",
+     "patterns": ["avoid touch", "always urinate", "always pee", "little urine", "bloody blood urine", "bloody blood pee"],
+     "responses": ["Bladder Stones"]
+    },
+    {"tag":  "bladderstones_dog_symptoms", "type": "dog",
+     "patterns": ["bladder stones symptoms", "bladder stones signs", "bladder stones indicators", "bladder stones indications"],
+     "responses": ["The symptoms of Bladder stones include 'avoiding touch', 'always urinates', 'little urine', 'blood in urine'."]
+    },
+    {"tag":  "bladderstones_dog_treatment", "type": "dog",
+     "patterns": ["treatment bladder stones", "treat bladder stones", "cure bladder stones", "remedy bladder stones", "heal bladder stones", "medication bladder stones"],
+     "responses": ["Seek professional medical help immediately as difficulties in urinating can cause life threatening problems. Surgical removal of the stones may be required."]
+    },
+    {"tag":  "cushing_def", "type": "dog",
+     "patterns": ["cushings disease", "cushings disease definition", "cushings disease meaning"],
+     "responses": ["Cushing's disease (also known as Cushing’s syndrome) is a condition in which the adrenal glands overproduce certain hormones."]
+    },
+    {"tag":  "cushing_diagnosis", "type": "dog",
+     "patterns": ["thirsty", "hungry", "always urinate", "always pee", "hair loss", "swollen belly big stomach", "tired", "fatigue", "thin skin"],
+     "responses": ["Cushing's Disease"]
+    },
+    {"tag":  "cushing_symptoms", "type": "dog",
+     "patterns": ["cushings disease symptoms", "cushings disease signs", "cushings disease indicators", "cushings disease indications"],
+     "responses": ["The symptoms of Cushing's disease include 'always thirsty or hungry', 'always urinates', 'hair loss', 'big belly', 'tired', 'thinning skin'."]
+    },
+    {"tag":  "cushing_treatment", "type": "dog",
+     "patterns": ["treatment cushings disease", "treat cushings disease", "cure cushings disease", "remedy cushings disease", "heal cushings disease", "medication cushings disease"],
+     "responses": ["Seek professional medical help from vets to perform screening tests, surgery may be required."]
+    },
+    {"tag":  "bonecancer_dog_def", "type": "dog",
+     "patterns": ["bone cancer", "bone cancer definition", "bone cancer meaning"],
+     "responses": ["Osteosarcoma is a malignant tumor of the bone. Osteosarcomas are tumors that arise from the abnormal production of cells that create and break down bone."]
+    },
+    {"tag":  "bonecancer_dog_diagnosis", "type": "dog",
+     "patterns": ["swelling", "weight loss", "aggression", "aggressive", "no appetite", "less appetite", "lameness", "sleepy"],
+     "responses": ["Bone Cancer"]
+    },
+    {"tag":  "bonecancer_dog_symptoms", "type": "dog",
+     "patterns": ["bone cancer symptoms", "bone cancer signs", "bone cancer indicators", "bone cancer indications"],
+     "responses": ["The symptoms of Bone cancer include 'swelling', 'weight loss', 'aggression', 'appetite loss', 'lameness', 'always sleepy'."]
+    },
+    {"tag":  "bonecancer_dog_treatment", "type": "dog",
+     "patterns": ["treatment bone cancer", "treat bone cancer", "cure bone cancer", "remedy bone cancer", "heal bone cancer", "medication bone cancer"],
+     "responses": ["Seek professional medical help from vets as surgery is typically required."]
+    },
+    {"tag":  "breastcancer_dog_def", "type": "dog",
+     "patterns": ["breast cancer", "breast cancer definition", "breast cancer meaning"],
+     "responses": ["Breast cancer is when a mammary tumor develops as a result of abnormal replication of the cells that make up the breast tissue."]
+    },
+    {"tag":  "breastcancer_dog_diagnosis", "type": "dog",
+     "patterns": ["swelling nipple", "swollen nipple", "mammary gland discharge", "nipple discharge", "nipple liquid", "no appetite", "less appetite", "weight loss"],
+     "responses": ["Breast Cancer"]
+    },
+    {"tag":  "breastcancer_dog_symptoms", "type": "dog",
+     "patterns": ["breast cancer symptoms", "breast cancer signs", "breast cancer indicators", "breast cancer indications"],
+     "responses": ["The symptoms of Breast cancer include 'swelling around nipple', 'mammary gland discharge', 'appetite loss', 'weight loss'."]
+    },
+    {"tag":  "breastcancer_dog_treatment", "type": "dog",
+     "patterns": ["treatment breast cancer", "treat breast cancer", "cure breast cancer", "remedy breast cancer", "heal breast cancer", "medication breast cancer"],
+     "responses": ["Seek professional medical help from vets as surgery is typically required."]
+    },
+    {"tag":  "bronchitis_def", "type": "dog",
+     "patterns": ["bronchitis", "bronchitis definition", "bronchitis meaning"],
+     "responses": ["Chronic bronchitis is a long-term and irreversible condition that affects the lower airways in the lung and can lead to permanent lung damage."]
+    },
+    {"tag":  "bronchitis_diagnosis", "type": "dog",
+     "patterns": ["coughing", "difficulty breathing", "hard to breathe", "fainting", "faint", "vomiting", "blue gums", "smoke", "chemical"],
+     "responses": ["Bronchitis"]
+    },
+    {"tag":  "bronchitis_symptoms", "type": "dog",
+     "patterns": ["bronchitis symptoms", "bronchitis signs", "bronchitis indicators", "bronchitis indications"],
+     "responses": ["The symptoms of Bronchitis include 'coughing', 'difficulty breathing', 'fainting', 'vomiting', 'blue gums'."]
+    },
+    {"tag":  "bronchitis_treatment", "type": "dog",
+     "patterns": ["treatment bronchitis", "treat bronchitis", "cure bronchitis", "remedy bronchitis", "heal bronchitis", "medication bronchitis"],
+     "responses": ["Seek professional medical help from vets to obtain consultation. Reduce number of environmental stimuli such as cigarette smoke, aerosols, powders and dust"]
+    },
+    {"tag":  "canineinfluenza_def", "type": "dog",
+     "patterns": ["canine influenza", "canine influenza definition", "canine influenza meaning"],
+     "responses": ["Canine Influenza (also known as dog flu) is influenza occurring in canine animals."]
+    },
+    {"tag":  "canineinfluenza_diagnosis", "type": "dog",
+     "patterns": ["sneezing", "runny nose", "coughing", "tired", "fatigue", "mucus"],
+     "responses": ["Canine Influenza"]
+    },
+    {"tag":  "canineinfluenza_symptoms", "type": "dog",
+     "patterns": ["canine influenza symptoms", "canine influenza signs", "canine influenza indicators", "canine influenza indications"],
+     "responses": ["The symptoms of canine influenza include 'sneezing', 'runny nose', 'coughing', 'tired'."]
+    },
+    {"tag":  "canineinfluenza_treatment", "type": "dog",
+     "patterns": ["treatment canine influenza", "treat canine influenza", "cure canine influenza", "remedy canine influenza", "heal canine influenza", "medication canine influenza"],
+     "responses": ["Provide plenty of water and rest for your dog. Seek professional medical help from vets to obtain prescribed antibiotics."]
+    },
+    {"tag":  "cherryeye_def", "type": "dog",
+     "patterns": ["cherry eye", "cherry eye definition", "cherry eye meaning"],
+     "responses": ["“Cherry eye,” as it is commonly referred to, is a prolapsed gland of the nictitans. It occurs after a tear gland in a dog’s third eyelid becomes inflamed."]
+    },
+    {"tag":  "cherryeye_diagnosis", "type": "dog",
+     "patterns": ["eyelid swelling", "dry eyes", "tears", "red eyes", "swollen eyelids"],
+     "responses": ["Cherry Eye"]
+    },
+    {"tag":  "cherryeye_symptoms", "type": "dog",
+     "patterns": ["cherry eye symptoms", "cherry eye signs", "cherry eye indicators", "cherry eye indications"],
+     "responses": ["The symptoms of Cherry eye include 'eyelid swelling', 'dry eyes', 'tears', 'red eyes'."]
+    },
+    {"tag":  "cherryeye_treatment", "type": "dog",
+     "patterns": ["treatment cherry eye", "treat cherry eye", "cure cherry eye", "remedy cherry eye", "heal cherry eye", "medication cherry eye"],
+     "responses": ["Seek professional medical help from vets. Eye drops may be prescribed or surgery in serious cases."]
+    },
+    {"tag":  "periodontal_def", "type": "dog",
+     "patterns": ["periodontal disease", "periodontal disease definition", "periodontal disease meaning"],
+     "responses": ["Periodontal disease is a progressive disease caused by bacteria in the mouth that damages the gums, bone, and other supporting structures of the teeth."]
+    },
+    {"tag":  "periodontal_diagnosis", "type": "dog",
+     "patterns": ["red gums", "swollen gums", "bleeding gums", "bad breath", "smelly breath", "loose teeth", "falling teeth"],
+     "responses": ["Periodontal Disease"]
+    },
+    {"tag":  "periodontal_symptoms", "type": "dog",
+     "patterns": ["periodontal disease symptoms", "periodontal disease signs", "periodontal disease indicators", "periodontal disease indications"],
+     "responses": ["The symptoms of Periodontal disease include 'red/swollen/bleeding gums', 'bad breath', 'loose or falling teeth'."]
+    },
+    {"tag":  "periodontal_treatment", "type": "dog",
+     "patterns": ["treatment periodontal disease", "treat periodontal disease", "cure periodontal disease", "remedy periodontal disease", "heal periodontal disease", "medication periodontal disease"],
+     "responses": ["Seek professional medical help from vets. Dental cleaning is performed or extraction in serious cases."]
+    },
+    {"tag":  "diabetes_dog_def", "type": "dog",
+     "patterns": ["diabetes", "diabetes definition", "diabetes meaning"],
+     "responses": ["Diabetes mellitus is a condition that affects the amount of glucose, or sugar in your dog's blood."]
+    },
+    {"tag":  "diabetes_dog_diagnosis", "type": "dog",
+     "patterns": ["always urinate", "always pee", "drinks drinking a lot of water", "hungry", "weight loss", "sleepy", "obese", "fat"],
+     "responses": ["Diabetes"]
+    },
+    {"tag":  "diabetes_dog_symptoms", "type": "dog",
+     "patterns": ["diabetes symptoms", "diabetes signs", "diabetes indicators", "diabetes indications"],
+     "responses": ["The symptoms of Diabetes include 'always urinating', 'drinks a lot of water', 'always hungry', 'weight loss', 'always sleepy'."]
+    },
+    {"tag":  "diabetes_dog_treatment", "type": "dog",
+     "patterns": ["treatment diabetes", "treat diabetes", "cure diabetes", "remedy diabetes", "heal diabetes", "medication diabetes"],
+     "responses": ["Seek professional medical help from vets to obtain insulin injections. It is also advised to reduce sugar intake in your dog's diets."]
+    },
+    {"tag":  "distemper_def", "type": "dog",
+     "patterns": ["distemper", "distemper definition", "distemper meaning"],
+     "responses": ["Canine distemper is a contagious and serious disease caused by a virus that attacks the respiratory, gastrointestinal and nervous systems of puppies and dogs."]
+    },
+    {"tag":  "distemper_diagnosis", "type": "dog",
+     "patterns": ["fever", "eye discharge", "nose discharge", "vomiting", "difficulty breathing", "hard to breathe", "diarrhea", "pain"],
+     "responses": ["Distemper"]
+    },
+    {"tag":  "distemper_symptoms", "type": "dog",
+     "patterns": ["distemper symptoms", "distemper signs", "distemper indicators", "distemper indications"],
+     "responses": ["The symptoms of Distemper include 'fever', 'eye and nasal discharges', 'vomiting', 'difficulty breathing', 'diarrhea', 'pain'."]
+    },
+    {"tag":  "distemper_treatment", "type": "dog",
+     "patterns": ["treatment distemper", "treat distemper", "cure distemper", "remedy distemper", "heal distemper", "medication distemper"],
+     "responses": ["Unfortunately, there is no cure for canine distemper. However, seek professional medical help from vets to obtain supportive care and symptom treatment."]
+    },
+    {"tag":  "earhematoma_def", "type": "dog",
+     "patterns": ["ear hematoma", "ear hematoma definition", "ear hematoma meaning"],
+     "responses": ["Ear hematomas occur when a blood vessel in the ear bursts and bleeds into the space between the ear cartilage and skin."]
+    },
+    {"tag":  "earhematoma_diagnosis", "type": "dog",
+     "patterns": ["scratching ear", "red ear", "shaking head", "long ears floppy ears"],
+     "responses": ["Ear Hematoma"]
+    },
+    {"tag":  "earhematoma_symptoms", "type": "dog",
+     "patterns": ["ear hematoma symptoms", "ear hematoma signs", "ear hematoma indicators", "ear hematoma indications"],
+     "responses": ["The symptoms of Ear hematoma include 'scratching ears', 'red ear', 'head shaking'."]
+    },
+    {"tag":  "earhematoma_treatment", "type": "dog",
+     "patterns": ["treatment ear hematoma", "treat ear hematoma", "cure ear hematoma", "remedy ear hematoma", "heal ear hematoma", "medication ear hematoma"],
+     "responses": ["Seek professional medical help from vets. Medications will be prescribed. However, draining or surgery may be required in serious cases."]
+    },
+    {"tag":  "conjunctivitis_dog_def", "type": "dog",
+     "patterns": ["conjunctivitis", "conjunctivitis definition", "conjunctivitis meaning"],
+     "responses": ["Conjunctivitis is the inflammation of the conjunctiva, which is the thin membrane on the inside of the eyelids and white part of the eye."]
+    },
+    {"tag":  "conjunctivitis_dog_diagnosis", "type": "dog",
+     "patterns": ["yellow green eye discharge", "yellow green eye liquid", "blinking", "red eye", "swollen eye"],
+     "responses": ["Conjunctivitis"]
+    },
+    {"tag":  "conjunctivitis_dog_symptoms", "type": "dog",
+     "patterns": ["conjunctivitis symptoms", "conjunctivitis signs", "conjunctivitis indicators", "conjunctivitis indications"],
+     "responses": ["The symptoms of Conjunctivitis include 'yellow/green eye discharge', 'excessive blinking', 'red swelling around eye'."]
+    },
+    {"tag":  "conjunctivitis_dog_treatment", "type": "dog",
+     "patterns": ["treatment conjunctivitis", "treat conjunctivitis", "cure conjunctivitis", "remedy conjunctivitis", "heal conjunctivitis", "medication conjunctivitis"],
+     "responses": ["Seek professional medical help to determine the underlying cause. Medications such as antibiotics or anti-inflammatory agents may be prescribed."]
+    },
+    {"tag":  "frostbite_def", "type": "dog",
+     "patterns": ["frostbite", "frostbite definition", "frostbite meaning"],
+     "responses": ["Frostbite is damage caused to skin and other tissues due to extreme cold."]
+    },
+    {"tag":  "frostbite_diagnosis", "type": "dog",
+     "patterns": ["skin discoloration", "pain when touched", "blisters", "dead skin", "skin ulcers", "cold area", "cold environment"],
+     "responses": ["Frostbite"]
+    },
+    {"tag":  "frostbite_symptoms", "type": "dog",
+     "patterns": ["frostbite symptoms", "frostbite signs", "frostbite indicators", "frostbite indications"],
+     "responses": ["The symptoms of Frostbite include 'skin discoloration', 'pain when touched', 'blisters and skin ulcers', 'dead skin'."]
+    },
+    {"tag":  "frostbite_treatment", "type": "dog",
+     "patterns": ["treatment frostbite", "treat frostbite", "cure frostbite", "remedy frostbite", "heal frostbite", "medication frostbite"],
+     "responses": ["Please move your pet to a dry and warm area. Please do not massage the affected area and seek professional medical help immediately."]
+    },
+    {"tag":  "gastritis_def", "type": "dog",
+     "patterns": ["gastritis", "gastritis definition", "gastritis meaning"],
+     "responses": ["Gastritis is defined as inflammation of the lining of the stomach."]
+    },
+    {"tag":  "gastritis_diagnosis", "type": "dog",
+     "patterns": ["vomiting", "thirsty", "blood bloody stool", "blood bloody poop", "abdominal pain", "eating spoilt or raw food", "eating too much food", "overeating", "swallow unknown item object"],
+     "responses": ["Gastritis"]
+    },
+    {"tag":  "gastritis_symptoms", "type": "dog",
+     "patterns": ["gastritis symptoms", "gastritis signs", "gastritis indicators", "gastritis indications"],
+     "responses": ["The symptoms of Gastritis include 'vomiting', 'always thirsty', 'bloody stool', 'abdominal pain'."]
+    },
+    {"tag":  "gastritis_treatment", "type": "dog",
+     "patterns": ["treatment gastritis", "treat gastritis", "cure gastritis", "remedy gastritis", "heal gastritis", "medication gastritis"],
+     "responses": ["You can withhold food for 24 to 48 hours, offer small amounts of water frequently to your dog. If vomiting returns, seek professional medical help from vets."]
+    },
+    {"tag":  "glaucoma_dog_def", "type": "dog",
+     "patterns": ["glaucoma", "glaucoma definition", "glaucoma meaning"],
+     "responses": ["Glaucoma is an eye condition caused by an abnormally high amount of pressure that builds up in the eye."]
+    },
+    {"tag":  "glaucoma_dog_diagnosis", "type": "dog",
+     "patterns": ["eye swelling", "swollen eye", "avoid touch", "sleepy", "avoid sunlight", "hiding from light", "vision problems", "vision issues"],
+     "responses": ["Glaucoma"]
+    },
+    {"tag":  "glaucoma_dog_symptoms", "type": "dog",
+     "patterns": ["glaucoma symptoms", "glaucoma signs", "glaucoma indicators", "glaucoma indications"],
+     "responses": ["The symptoms of Glaucoma include 'eye swelling', avoids touches and sunlight', 'sleepiness', vision problems."]
+    },
+    {"tag":  "glaucoma_dog_treatment", "type": "dog",
+     "patterns": ["treatment glaucoma", "treat glaucoma", "cure glaucoma", "remedy glaucoma", "heal glaucoma", "medication glaucoma"],
+     "responses": ["Seek professional medical help from vets as different types of treatment may be recommended."]
+    },
+    {"tag":  "heartworm_def", "type": "dog",
+     "patterns": ["heartworm", "heartworm definition", "heartworm meaning"],
+     "responses": ["Heartworm infestation is caused by foot-long worms (heartworms) that live in the heart, lungs and associated blood vessels of affected pets."]
+    },
+    {"tag":  "heartworm_diagnosis", "type": "dog",
+     "patterns": ["weight loss", "fatigue", "tired", "coughing", "swollen belly big stomach", "dark urine", "dark pee", "bloody blood urine", "bloody blood pee", "mosquito"],
+     "responses": ["Heartworms"]
+    },
+    {"tag":  "heartworm_symptoms", "type": "dog",
+     "patterns": ["heartworm symptoms", "heartworm signs", "heartworm indicators", "heartworm indications"],
+     "responses": ["The symptoms of Heartworm infestation include 'weight loss', 'fatigue', 'coughing', 'swollen belly', 'dark urine', 'blood in urine'. It is spread by mosquito bites."]
+    },
+    {"tag":  "heartworm_treatment", "type": "dog",
+     "patterns": ["treatment heartworm", "treat heartworm", "cure heartworm", "remedy heartworm", "heal heartworm", "medication heartworm"],
+     "responses": ["Seek professional medical help immediately as the blockage must be removed as soon as possible."]
+    },
+    {"tag":  "heatstroke_dog_def", "type": "dog",
+     "patterns": ["heat stroke", "heat stroke definition", "heat stroke meaning"],
+     "responses": ["Heat stroke is a term commonly used for hyperthermia or elevated body temperature."]
+    },
+    {"tag":  "heatstroke_dog_diagnosis", "type": "dog",
+     "patterns": ["increased breathing rate", "fast breathing", "dry sticky gums", "gum bruises", "seizures", "panting", "fainting", "faint", "hot area", "hot environment"],
+     "responses": ["Heat Stroke"]
+    },
+    {"tag":  "heatstroke_dog_symptoms", "type": "dog",
+     "patterns": ["heat stroke symptoms", "heat stroke signs", "heat stroke indicators", "heat stroke indications"],
+     "responses": ["The symptoms of Heat Stroke include 'elevated breathing', 'dry sticky gums', 'gum bruises', 'seizures', 'panting', 'fainting'. It can happen during exercise or in hot environments."]
+    },
+    {"tag":  "heatstroke_dog_treatment", "type": "dog",
+     "patterns": ["treatment heat stroke", "treat heat stroke", "cure heat stroke", "remedy heat stroke", "heal heat stroke", "medication heat stroke"],
+     "responses": ["Cool water may be poured over the head, stomach and feet or by using cool cloths to wrap around your dog. Seek professional medical help immediately."]
+    },
+    {"tag":  "canineherpes_def", "type": "dog",
+     "patterns": ["canine herpes", "canine herpes definition", "canine herpes meaning"],
+     "responses": ["Canine herpesvirus or canine herpes is a systemic, often fatal disease of puppies caused by canine herpes virus (CHV)."]
+    },
+    {"tag":  "canineherpes_diagnosis", "type": "dog",
+     "patterns": ["eye discharge", "coughing", "genital sores", "genital discharge", "genital liquid", "puppy"],
+     "responses": ["Canine Herpes"]
+    },
+    {"tag":  "canineherpes_symptoms", "type": "dog",
+     "patterns": ["canine herpes symptoms", "canine herpes signs", "canine herpes indicators", "canine herpes indications"],
+     "responses": ["The symptoms of Canine Herpes include 'eye discharge', 'coughing', 'genital sores', 'genital discharge'. It is seen most commonly in puppies."]
+    },
+    {"tag":  "canineherpes_treatment", "type": "dog",
+     "patterns": ["treatment canine herpes", "treat canine herpes", "cure canine herpes", "remedy canine herpes", "heal canine herpes", "medication canine herpes"],
+     "responses": ["Seek professional medical help immediately as it is a life threatening disease."]
+    },
+    {"tag":  "dysplasia_dog_def", "type": "dog",
+     "patterns": ["hip dysplasia", "hip dysplasia definition", "hip dysplasia meaning"],
+     "responses": ["Canine Hip Dysplasia (CHD) is a condition that begins in dogs as they grow and results in instability or a loose fit (laxity) of the hip joint."]
+    },
+    {"tag":  "dysplasia_dog_diagnosis", "type": "dog",
+     "patterns": ["stiffness in back legs", "small thigh", "less active", "big shoulder", "overeating", "eating too much food"],
+     "responses": ["Hip Dysplasia"]
+    },
+    {"tag":  "dysplasia_dog_symptoms", "type": "dog",
+     "patterns": ["hip dysplasia symptoms", "hip dysplasia signs", "hip dysplasia indicators", "hip dysplasia indications"],
+     "responses": ["The symptoms of Hip Dysplasia include 'Stiffness in back legs', 'Thigh muscle mass decrease', 'less active', 'shoulder muscle growth'. It may be caused by overfeeding."]
+    },
+    {"tag":  "dysplasia_dog_treatment", "type": "dog",
+     "patterns": ["treatment hip dysplasia", "treat hip dysplasia", "cure hip dysplasia", "remedy hip dysplasia", "heal hip dysplasia", "medication hip dysplasia"],
+     "responses": ["Make sure your dog gets enough exercise and massage its joints frequent. Medications will be prescribed by vets."]
+    },
+    {"tag":  "hookworm_def", "type": "dog",
+     "patterns": ["hookworm", "hookworm definition", "hookworm meaning"],
+     "responses": ["Hookworms is the common name for a group of strongylid parasites that affect dogs and live in the small intestine."]
+    },
+    {"tag":  "hookworm_dog_diagnosis", "type": "dog",
+     "patterns": ["pale gums", "weak", "diarrhea", "dull fur", "dry fur", "ingesting soil dirt", "swallowing soil dirt"],
+     "responses": ["Hookworms"]
+    },
+    {"tag":  "hookworm_dog_symptoms", "type": "dog",
+     "patterns": ["hookworm symptoms", "hookworm signs", "hookworm indicators", "hookworm indications"],
+     "responses": ["The symptoms of Hookworms include 'pale gums', 'weakness', 'diarrhea', 'dull and dry fur'. It may happen if your dog ingests soil or dirt."]
+    },
+    {"tag":  "hookworm_dog_treatment", "type": "dog",
+     "patterns": ["treatment hookworm", "treat hookworm", "cure hookworm", "remedy hookworm", "heal hookworm", "medication hookworm"],
+     "responses": ["Seek professional medical help from vets. Drugs may be prescribed to eliminate hookworms."]
+    },
+    {"tag":  "hypothyroidism_def", "type": "dog",
+     "patterns": ["hypothyroidism", "hypothyroidism definition", "hypothyroidism meaning"],
+     "responses": ["Hypothyroidism is an abnormality of the thyroid gland leading to a reduction in the metabolic state."]
+    },
+    {"tag":  "hypothyroidism_diagnosis", "type": "dog",
+     "patterns": ["hair loss", "flaky skin", "black dark skin patches", "weight gain", "muscle loss"],
+     "responses": ["Hypothyroidism"]
+    },
+    {"tag":  "hypothyroidism_symptoms", "type": "dog",
+     "patterns": ["hypothyroidism symptoms", "hypothyroidism signs", "hypothyroidism indicators", "hypothyroidism indications"],
+     "responses": ["The symptoms of Hypothyroidism include 'hair loss', 'flaky skin', 'black skin patches', 'weight gain', 'muscle loss'."]
+    },
+    {"tag":  "hypothyroidism_treatment", "type": "dog",
+     "patterns": ["treatment hypothyroidism", "treat hypothyroidism", "cure hypothyroidism", "remedy hypothyroidism", "heal hypothyroidism", "medication hypothyroidism"],
+     "responses": ["Seek professional medical help from vets for prescription of oral drugs."]
+    },
+    {"tag":  "ibd_dog_def", "type": "dog",
+     "patterns": ["inflammatory bowel disease", "inflammatory bowel disease definition", "inflammatory bowel disease meaning"],
+     "responses": ["Inflammatory bowel disease (IBD) is a condition in which your dog's intestine or digestive tract becomes inflamed consistently."]
+    },
+    {"tag":  "ibd_dog_diagnosis", "type": "dog",
+     "patterns": ["vomiting", "diarrhea", "weight loss", "increased appetite", "no appetite", "less appetite"],
+     "responses": ["Inflammatory Bowel Disease"]
+    },
+    {"tag":  "ibd_dog_symptoms", "type": "dog",
+     "patterns": ["inflammatory bowel disease symptoms", "inflammatory bowel disease signs", "inflammatory bowel disease indicators", "inflammatory bowel disease indications"],
+     "responses": ["The symptoms of Inflammatory Bowel Disease include 'vomiting', 'diarrhea', 'weight loss', 'increased or appetite loss."]
+    },
+    {"tag":  "ibd_dog_treatment", "type": "dog",
+     "patterns": ["treatment inflammatory bowel disease", "treat inflammatory bowel disease", "cure inflammatory bowel disease", "remedy inflammatory bowel disease", "heal inflammatory bowel disease", "medication inflammatory bowel disease"],
+     "responses": ["The condition can be managed through prescription of medication such as antibiotics and steroids from vets."]
+    },
+    {"tag":  "kennelcough_def", "type": "dog",
+     "patterns": ["kennel cough", "kennel cough definition", "kennel cough meaning"],
+     "responses": ["Kennel Cough (also known as canine infectious tracheobronchitis) is a highly contagious respiratory disease."]
+    },
+    {"tag":  "kennelcough_diagnosis", "type": "dog",
+     "patterns": ["strong coughing", "weird cough sound", "runny nose", "mucus", "sneezing", "fever", "cold environment", "cigarette smoke"],
+     "responses": ["Kennel Cough"]
+    },
+    {"tag":  "kennelcough_symptoms", "type": "dog",
+     "patterns": ["kennel cough symptoms", "kennel cough signs", "kennel cough indicators", "kennel cough indications"],
+     "responses": ["The symptoms of Kennel Cough include 'strong coughing', 'strange honking cough sounds', 'runny nose', 'sneezing', 'fever'. It may be caused due to cold environment, poor ventilation or contact with cigarette smoke."]
+    },
+    {"tag":  "kennelcough_treatment", "type": "dog",
+     "patterns": ["treatment kennel cough", "treat kennel cough", "cure kennel cough", "remedy kennel cough", "heal kennel cough", "medication kennel cough"],
+     "responses": ["Kennel Cough can be treated with a week or two of rest. Medications may be prescribed by vets to prevent a secondary infection."]
+    },
+    {"tag":  "kidneydisease_dog_def", "type": "dog",
+     "patterns": ["kidney disease", "kidney disease definition", "kidney disease meaning"],
+     "responses": ["Kidney disease is associated with aging, and in simple terms can be considered to be the 'wearing out' of the kidney tissues."]
+    },
+    {"tag":  "kidneydisease_dog_diagnosis", "type": "dog",
+     "patterns": ["vomiting", "diarrhea", "blood bloody urine", "blood bloody pee", "weight loss", "drinks drinking a lot of water", "drinking drink less water", "old"],
+     "responses": ["Kidney Disease"]
+    },
+    {"tag":  "kidneydisease_dog_symptoms", "type": "dog",
+     "patterns": ["kidney disease symptoms", "kidney disease signs", "kidney disease indicators", "kidney disease indications"],
+     "responses": ["The symptoms of Kidney Disease include 'vomiting', 'diarrhea', 'bloody urine', 'weight loss', drinking more or less water'. Leukemia is commonly diagnosisnosed in older aged pets."]
+    },
+    {"tag":  "kidneydisease_dog_treatment", "type": "dog",
+     "patterns": ["treatment kidney disease", "treat kidney disease", "cure kidney disease", "remedy kidney disease", "heal kidney disease", "medication kidney disease"],
+     "responses": ["Seek professional medical help from vets. Treatment will depend on the severity of your pet's condition."]
+    },
+    {"tag":  "leukemia_def", "type": "dog",
+     "patterns": ["leukemia", "leukemia definition", "leukemia meaning"],
+     "responses": ["Leukemia is a form of cancer that results in an increased white blood cell count in the blood stream and bone marrow."]
+    },
+    {"tag":  "leukemia_diagnosis", "type": "dog",
+     "patterns": ["pale tongue", "pale gums", "bleed easily", "diarrhea", "slow healing", "aggression", "aggressive", "weak", "radiation", "chemicals"],
+     "responses": ["Leukemia"]
+    },
+    {"tag":  "leukemia_symptoms", "type": "dog",
+     "patterns": ["leukemia symptoms", "leukemia signs", "leukemia indicators", "leukemia indications"],
+     "responses": ["The symptoms of Leukemia include 'pale tongue or gums', 'bleeding easily', 'chronic diarrhea', 'slow healing', 'aggression', 'weakness'. Leukemia can be caused by exposure to radiation or chemicals."]
+    },
+    {"tag":  "leukemia_treatment", "type": "dog",
+     "patterns": ["treatment leukemia", "treat leukemia", "cure leukemia", "remedy leukemia", "heal leukemia", "medication leukemia"],
+     "responses": ["Seek professional medical help from vets. Chemotherapy is the standard treatment for leukemia."]
+    },
+    {"tag":  "skincancer_dog_def", "type": "dog",
+     "patterns": ["skin cancer", "skin cancer definition", "skin cancer meaning"],
+     "responses": ["Skin cancer is the out-of-control growth of abnormal cells in the epidermis, the outermost skin layer, caused by unrepaired DNA damage that triggers mutations."]
+    },
+    {"tag":  "skincancer_dog_diagnosis", "type": "dog",
+     "patterns": ["black brown gray patches on skin", "lumps bumps lips", "lumps bumps mouth", "lumps bumps feet"],
+     "responses": ["Skin Cancer"]
+    },
+    {"tag":  "skincancer_dog_symptoms", "type": "dog",
+     "patterns": ["skin cancer symptoms", "skin cancer signs", "skin cancer indicators", "skin cancer indications"],
+     "responses": ["The symptoms of Skin Cancer include 'black/brown/gray patches on the skin', 'lumps or bumps on the lips/mouth/feet."]
+    },
+    {"tag":  "skincancer_dog_treatment", "type": "dog",
+     "patterns": ["treatment skin cancer", "treat skin cancer", "cure skin cancer", "remedy skin cancer", "heal skin cancer", "medication skin cancer"],
+     "responses": ["Seek professional medical help from vets as surgery or chemotherapy is required."]
+    },
+    {"tag":  "liverdisease_dog_def", "type": "dog",
+     "patterns": ["liver disease", "liver disease definition", "liver disease meaning"],
+     "responses": ["Liver Disease is any disturbance of liver function that causes illness in your dog."]
+    },
+    {"tag":  "liverdisease_dog_diagnosis", "type": "dog",
+     "patterns": ["weak", "bloody blood urine", "bloody blood pee", "bloody blood stool", "bloody blood poop", "seizures", "vomiting", "diarrhea", "yellow eyes", "yellow tongue", "yellow gums"],
+     "responses": ["Liver Disease"]
+    },
+    {"tag":  "liverdisease_dog_symptoms", "type": "dog",
+     "patterns": ["liver disease symptoms", "liver disease signs", "liver disease indicators", "liver disease indications"],
+     "responses": ["The symptoms of Liver Disease include 'weakness', 'blood in urine or poop', 'seizures', 'vomiting or diarrhea', yellow eyes/tongue/gums. The use of painkillers or excess fatty food in diets may contribute to Liver Disease."]
+    },
+    {"tag":  "liverdisease_dog_treatment", "type": "dog",
+     "patterns": ["treatment liver disease", "treat liver disease", "cure liver disease", "remedy liver disease", "heal liver disease", "medication liver disease"],
+     "responses": ["Seek professional medical help from vets. Treatment ranges from diet changes to surgery depending on its severity."]
+    },
+    {"tag":  "obesity_dog_def", "type": "dog",
+     "patterns": ["obesity", "obesity definition", "obesity meaning"],
+     "responses": ["Obesity refers to an excess of white adipose tissue and is normally the result of energy intake exceeding energy expenditure."]
+    },
+    {"tag":  "obesity_dog_diagnosis", "type": "dog",
+     "patterns": ["weight gain", "fat", "difficulty breathing", "hard to breathe", "difficulty moving", "hard to move", "imbalanced diet", "bad diet", "too much fat food"],
+     "responses": ["Obesity"]
+    },
+    {"tag":  "obesity_dog_symptoms", "type": "dog",
+     "patterns": ["obesity symptoms", "obesity signs", "obesity indicators", "obesity indications"],
+     "responses": ["The symptoms of Obesity include 'weight gain', 'excess body fat', 'difficulty in breathing and moving'. Obesity is usually caused by an imbalanced or bad diet."]
+    },
+    {"tag":  "obesity_dog_treatment", "type": "dog",
+     "patterns": ["treatment obesity", "treat obesity", "cure obesity", "remedy obesity", "heal obesity", "medication obesity"],
+     "responses": ["Just as humans, decreasing your dog's caloric intake and an increase in exercise in a good way for weight loss. Consult a vet for feeding and diet recommendations."]
+    },
+    {"tag":  "pancreatitis_dog_def", "type": "dog",
+     "patterns": ["pancreatitis", "pancreatitis definition", "pancreatitis meaning"],
+     "responses": ["Pancreatitis occurs when the pancreas becomes inflamed (tender and swollen)."]
+    },
+    {"tag":  "pancreatitis_dog_diagnosis", "type": "dog",
+     "patterns": ["fever", "difficulty breathing", "hard to breathe", "irregular heartbeat", "belly pain", "stomach pain", "vomiting"],
+     "responses": ["Pancreatitis"]
+    },
+    {"tag":  "pancreatitis_dog_symptoms", "type": "dog",
+     "patterns": ["pancreatitis symptoms", "pancreatitis signs", "pancreatitis indicators", "pancreatitis indications"],
+     "responses": ["The symptoms of Pancreatitis include 'fever', 'difficulty breathing', 'irregular heartbeat', 'belly pain', 'vomiting', 'dehydration'."]
+    },
+    {"tag":  "pancreatitis_dog_treatment", "type": "dog",
+     "patterns": ["treatment pancreatitis", "treat pancreatitis", "cure pancreatitis", "remedy pancreatitis", "heal pancreatitis", "medication pancreatitis"],
+     "responses": ["Seek professional medical help from vets. Drug or diet changes may be recommended by your vet."]
+    },
+    {"tag":  "rabies_dog_def", "type": "dog",
+     "patterns": ["rabies", "rabies definition", "rabies meaning"],
+     "responses": ["Rabies is an incurable virus that attacks the brain and spinal cord. All mammals, including dogs and humans, can catch rabies. So, please be aware and careful."]
+    },
+    {"tag":  "rabies_dog_diagnosis", "type": "dog",
+     "patterns": ["aggression", "aggressive", "fever", "drooling", "seizures", "foaming at mouth bubbles at mouth", "hide from light avoid light", "excited", "raccoons skunks"],
+     "responses": ["Rabies"]
+    },
+    {"tag":  "rabies_dog_symptoms", "type": "dog",
+     "patterns": ["rabies symptoms", "rabies signs", "rabies indicators", "rabies indications"],
+     "responses": ["The symptoms of Rabies include 'aggression', 'fever', 'drooling and foaming at the mouth', 'seizures', 'hiding from light', 'overly excited'. Rabies are usually caused by the bites of raccoons, skunks or bats."]
+    },
+    {"tag":  "rabies_dog_treatment", "type": "dog",
+     "patterns": ["treatment rabies", "treat rabies", "cure rabies", "remedy rabies", "heal rabies", "medication rabies"],
+     "responses": ["Unfortunately, there are no ways to treat rabies in dogs once symptoms appear. However please be careful, you must still seek professional medical help from vets immediately!"]
+    },
+    {"tag":  "lyme_dog_def", "type": "dog",
+     "patterns": ["lyme disease", "lyme disease definition", "lyme disease meaning"],
+     "responses": ["Lyme disease, also known as Lyme borreliosis, is a bacterial illness that is transmitted by certain species of ticks."]
+    },
+    {"tag":  "lyme_dog_diagnosis", "type": "dog",
+     "patterns": ["fever", "less energy no energy", "tired", "swollen joints", "lameness", "ticks"],
+     "responses": ["Lyme Disease"]
+    },
+    {"tag":  "lyme_dog_symptoms", "type": "dog",
+     "patterns": ["lyme disease symptoms", "lyme disease signs", "lyme disease indicators", "lyme disease indications"],
+     "responses": ["The symptoms of Lyme Disease include 'fever', 'less energy', 'lameness', 'swollen painful joints'. Lyme Disease is transmitted through the bites of ticks."]
+    },
+    {"tag":  "lyme_dog_treatment", "type": "dog",
+     "patterns": ["treatment lyme disease", "treat lyme disease", "cure lyme disease", "remedy lyme disease", "heal lyme disease", "medication lyme disease"],
+     "responses": ["Seek professional medical help from vets as treatment include antibiotics or prolonged medication."]
+    },
+    {"tag":  "yeast_def", "type": "dog",
+     "patterns": ["yeast infection", "yeast infection definition", "yeast infection meaning"],
+     "responses": ["Yeast dermatitis or Malassezia dermatitis is caused by the fungus Malassezia pachydermatis. It is an extremely common cause of skin disease in dogs."]
+    },
+    {"tag":  "yeast_diagnosis", "type": "dog",
+     "patterns": ["bad smell", "smelly", "red ears", "swollen ears", "ear discharge", "ear liquid", "loss balance", "loss of hearing", "walking in circles"],
+     "responses": ["Yeast Infection"]
+    },
+    {"tag":  "yeast_symptoms", "type": "dog",
+     "patterns": ["yeast infection symptoms", "yeast infection signs", "yeast infection indicators", "yeast infection indications"],
+     "responses": ["The symptoms of Yeast Infection include 'bad smell', 'red swelling ears', 'ear discharge', 'loss of balance or hearing', 'walking in circles'."]
+    },
+    {"tag":  "yeast_treatment", "type": "dog",
+     "patterns": ["treatment yeast infection", "treat yeast infection", "cure yeast infection", "remedy yeast infection", "heal yeast infection", "medication yeast infection"],
+     "responses": ["Seek professional medical help from vets to determine which part of the ear may be infected as treatment varies."]
+    },
+    {"tag":  "testiculartumor_def", "type": "dog",
+     "patterns": ["testicular tumor", "testicular tumor definition", "testicular tumor meaning"],
+     "responses": ["A testicular tumor is a tumor that develops from a disordered uncontrolled growth of cells within the testicles."]
+    },
+    {"tag":  "testiculartumor_diagnosis", "type": "dog",
+     "patterns": ["testicle swelling swollen", "uneven testicles", "different size testicles", "scrotum swelling swollen", "dark skin", "male boy"],
+     "responses": ["Testicular Tumor"]
+    },
+    {"tag":  "testiculartumor_symptoms", "type": "dog",
+     "patterns": ["testicular tumor symptoms", "testicular tumor signs", "testicular tumor indicators", "testicular tumor indications"],
+     "responses": ["The symptoms of Testicular Tumor include 'swelling of testicles or scrotum', 'uneven testicles', 'darkening of skin', 'reduced sex drive'."]
+    },
+    {"tag":  "testiculartumor_treatment", "type": "dog",
+     "patterns": ["treatment testicular tumor", "treat testicular tumor", "cure testicular tumor", "remedy testicular tumor", "heal testicular tumor", "medication testicular tumor"],
+     "responses": ["Seek professional medical help from vets. The most common treatment recommended is surgical removal of the testicles."]
+    },
+    {"tag":  "anemia_dog_def", "type": "dog",
+     "patterns": ["anemia", "anemia definition", "anemia meaning"],
+     "responses": ["Anemia occurs when there is a decrease in the number of red blood cells, which can be measured by red blood cell count or hemoglobin concentration."]
+    },
+    {"tag":  "anemia_dog_diagnosis", "type": "dog",
+     "patterns": ["fatigue", "easily tired", "dark stool dark poop", "bloody blood stool", "bloody blood poop", "gum color change"],
+     "responses": ["Anemia"]
+    },
+    {"tag":  "anemia_dog_symptoms", "type": "dog",
+     "patterns": ["anemia symptoms", "anemia signs", "anemia indicators", "anemia indications"],
+     "responses": ["The symptoms of Anemia include 'fatigue', 'easily tired', 'dark stool', 'blood in stool', 'change in gum color'."]
+    },
+    {"tag":  "anemia_dog_treatment", "type": "dog",
+     "patterns": ["treatment anemia", "treat anemia", "cure anemia", "remedy anemia", "heal anemia", "medication anemia"],
+     "responses": ["Seek professional medical help immediately from vets especially if you notice blood in stools or vomit. A blood transfusion may be required."]
+    },
+    {"tag":  "osteogenesis_def", "type": "dog",
+     "patterns": ["osteogenesis", "osteogenesis definition", "osteogenesis meaning"],
+     "responses": ["Osteogenesis imperfecta, also known as “Brittle-bone disease”, is an inherited disease that results in fragile bones, joints and teeth."]
+    },
+    {"tag":  "osteogenesis_diagnosis", "type": "dog",
+     "patterns": ["teeth fracture", "broken teeth", "difficulty walking", "hard to walk", "hearing loss", "weak muscles"],
+     "responses": ["Osteogenesis"]
+    },
+    {"tag":  "osteogenesis_symptoms", "type": "dog",
+     "patterns": ["osteogenesis symptoms", "osteogenesis signs", "osteogenesis indicators", "osteogenesis indications"],
+     "responses": ["The symptoms of Osteogenesis include 'teeth fracturing', 'difficulty walking', 'hearing loss', 'weak muscles'."]
+    },
+    {"tag":  "osteogenesis_treatment", "type": "dog",
+     "patterns": ["treatment osteogenesis", "treat osteogenesis", "cure osteogenesis", "remedy osteogenesis", "heal osteogenesis", "medication osteogenesis"],
+     "responses": ["Seek professional medical help from vets. Mild cases may be treated with surgery or managed with medications."]
+    },
+    {"tag":  "parvovirus_def", "type": "dog",
+     "patterns": ["canine parvovirus", "canine parvovirus definition", "canine parvovirus meaning"],
+     "responses": ["Canine Parvovirus (CPV) is an extremely contagious dog health problem that can impact the stomach and small intestines (common cases) or the cardiovascular system (less common)."]
+    },
+    {"tag":  "parvovirus_diagnosis", "type": "dog",
+     "patterns": ["anorexia", "thin body", "fever", "diarrhea", "contact with poop stool", "touch play poop stool"],
+     "responses": ["Canine Parvovirus"]
+    },
+    {"tag":  "parvovirus_symptoms", "type": "dog",
+     "patterns": ["canine parvovirus symptoms", "canine parvovirus signs", "canine parvovirus indicators", "canine parvovirus indications"],
+     "responses": ["The symptoms of Canine Parvovirus include 'anorexia', 'thin body', 'fever', 'severe bloody diarrhea'. It can be caused by contact with feces."]
+    },
+    {"tag":  "parvovirus_treatment", "type": "dog",
+     "patterns": ["treatment canine parvovirus", "treat canine parvovirus", "cure canine parvovirus", "remedy canine parvovirus", "heal canine parvovirus", "medication canine parvovirus"],
+     "responses": ["Unfortunately, there is no cure for canine parvovirus. However, please seek professional medical help from vets to prevent secondary infections and manage symptoms."]
+    },
+    {"tag":  "fungal_def", "type": "dog",
+     "patterns": ["fungal infection", "fungal infection definition", "fungal infection meaning"],
+     "responses": ["Fungal infections occur when fungal spores that your dog has come into contact with in the environment enter its body."]
+    },
+    {"tag":  "fungal_diagnosis", "type": "dog",
+     "patterns": ["nose bleed", "bloody nose", "coughing", "swollen nose", "fever", "sneezing", "red eyes", "ingesting swallowing soil", "ingesting swallowing dirt"],
+     "responses": ["Fungal Infection"]
+    },
+    {"tag":  "fungal_symptoms", "type": "dog",
+     "patterns": ["fungal infection symptoms", "fungal infection signs", "fungal infection indicators", "fungal infection indications"],
+     "responses": ["The symptoms of Fungal Infection include 'nose bleed', 'coughing', 'swollen nose', 'fever', 'sneezing', 'red eyes'. It can be caused by the ingestion or swallowing of soil or dirt."]
+    },
+    {"tag":  "fungal_treatment", "type": "dog",
+     "patterns": ["treatment fungal infection", "treat fungal infection", "cure fungal infection", "remedy fungal infection", "heal fungal infection", "medication fungal infection"],
+     "responses": ["Seek professional medical help from vets for prescription of nasal or oral antifungal medications."]
+    },
+    {"tag":  "moistdermatitis_def", "type": "dog",
+     "patterns": ["acute moist dermatitis", "acute moist dermatitis definition", "acute moist dermatitis meaning"],
+     "responses": ["Acute Moist Dermatitis (also known as Hot Spots) is a common superficial skin disorder where red and itchy lesions appear on the body."]
+    },
+    {"tag":  "moistdermatitis_diagnosis", "type": "dog",
+     "patterns": ["red skin", "hair loss", "discharge liquid", "pus", "licking body", "biting body", "scratching body", "mosquito", "flies", "swimming"],
+     "responses": ["Acute Moist Dermatitis"]
+    },
+    {"tag":  "moistdermatitis_symptoms", "type": "dog",
+     "patterns": ["acute moist dermatitis symptoms", "acute moist dermatitis signs", "acute moist dermatitis indicators", "acute moist dermatitis indications"],
+     "responses": ["The symptoms of Acute Moist Dermatitis include 'red skin', 'hair loss', 'discharge of pus or liquid', 'licking/biting/scratching body'. It can be caused by mosquito bites, flies or swimming in contaminated water."]
+    },
+    {"tag":  "moistdermatitis_treatment", "type": "dog",
+     "patterns": ["treatment acute moist dermatitis", "treat acute moist dermatitis", "cure acute moist dermatitis", "remedy acute moist dermatitis", "heal acute moist dermatitis", "medication acute moist dermatitis"],
+     "responses": ["If detected early, use medicated anti-itch shampoos to soothe skin. Seek professional medical help from vets for severe cases."]
+    },
+    {"tag":  "leptospirosis_def", "type": "dog",
+     "patterns": ["leptospirosis", "leptospirosis definition", "leptospirosis meaning"],
+     "responses": ["Leptospirosis (Lepto) is a highly contagious bacterial infection which impacts dogs and mammals."]
+    },
+    {"tag":  "leptospirosis_diagnosis", "type": "dog",
+     "patterns": ["fever", "vomiting", "shivering", "coughing", "always urinate", "always pee", "thirsty", "swimming", "drinking drink dirty water", "eating dirty food"],
+     "responses": ["Leptospirosis"]
+    },
+    {"tag":  "leptospirosis_symptoms", "type": "dog",
+     "patterns": ["leptospirosis symptoms", "leptospirosis signs", "leptospirosis indicators", "leptospirosis indications"],
+     "responses": ["The symptoms of Leptospirosis include 'fever', 'vomiting', 'shivering', 'coughing', 'always urinating', 'always thirsty'. It can be caused by swimming in or drinking dirty water/ eating infected meat."]
+    },
+    {"tag":  "leptospirosis_treatment", "type": "dog",
+     "patterns": ["treatment leptospirosis", "treat leptospirosis", "cure leptospirosis", "remedy leptospirosis", "heal leptospirosis", "medication leptospirosis"],
+     "responses": ["Seek professional medical help from vets as antibiotics may be prescribed. Severe cases may require hospitalization."]
+    },
+    {"tag":  "tapeworm_def", "type": "dog",
+     "patterns": ["tapeworm", "tapeworm definition", "tapeworm meaning"],
+     "responses": ["The tapeworm is a flat, white, segmented parasite commonly found in dogs. Tapeworms live inside a dog’s intestinal tract."]
+    },
+    {"tag":  "tapeworm_diagnosis", "type": "dog",
+     "patterns": ["tired", "fatigue", "dull dark fur", "weight loss", "dragging butt on floor", "rubbing butt on floor", "diarrhea", "bite bird", "bite rat"],
+     "responses": ["Tapeworms"]
+    },
+    {"tag":  "tapeworm_symptoms", "type": "dog",
+     "patterns": ["tapeworm symptoms", "tapeworm signs", "tapeworm indicators", "tapeworm indications"],
+     "responses": ["The symptoms of Tapeworms include 'tired', 'dull fur', 'weight loss', 'scooting rear on ground', 'diarrhea'. It can be caused by biting birds or rats."]
+    },
+    {"tag":  "tapeworm_treatment", "type": "dog",
+     "patterns": ["treatment tapeworm", "treat tapeworm", "cure tapeworm", "remedy tapeworm", "heal tapeworm", "medication tapeworm"],
+     "responses": ["Seek professional medical help from vets as deworming procedures may be recommended to eliminate the infestation."]
+    },
+    {"tag":  "poisoning_dog_def", "type": "dog",
+     "patterns": ["poisoning", "poisoning definition", "poisoning meaning"],
+     "responses": ["Poisoning occurs when your dog ingests some item or material that is toxic or poisonous to its body."]
+    },
+    {"tag":  "poisoning_dog_diagnosis", "type": "dog",
+     "patterns": ["drooling", "vomiting", "no appetite", "less appetite", "rashes", "seizures", "difficulty breathing", "hard to breathe", "eating unknown poisonous item"],
+     "responses": ["Poisoning"]
+    },
+    {"tag":  "poisoning_dog_symptoms", "type": "dog",
+     "patterns": ["poisoning symptoms", "poisoning signs", "poisoning indicators", "poisoning indications"],
+     "responses": ["The symptoms of Poisoning include 'drooling', 'vomiting', 'appetite loss', 'rashes', 'seizures', 'difficulty breathing'. It can happen when your pet eats an unknown or poisonous item."]
+    },
+    {"tag":  "poisoning_dog_treatment", "type": "dog",
+     "patterns": ["treatment poisoning", "treat poisoning", "cure poisoning", "remedy poisoning", "heal poisoning", "medication poisoning"],
+     "responses": ["Please wrap your dog in a blanket and seek professional medical help from vets immediately as it may be life threatening."]
+    },
+    {"tag":  "pyometra_def", "type": "dog",
+     "patterns": ["pyometra", "pyometra definition", "pyometra meaning"],
+     "responses": ["Pyometra is a secondary infection that occurs as a result of hormonal changes in the female's reproductive tract."]
+    },
+    {"tag":  "pyometra_diagnosis", "type": "dog",
+     "patterns": ["pus", "vaginal discharge", "liquid from vagina", "old", "female", "girl"],
+     "responses": ["Pyometra"]
+    },
+    {"tag":  "pyometra_symptoms", "type": "dog",
+     "patterns": ["pyometra symptoms", "pyometra signs", "pyometra indicators", "pyometra indications"],
+     "responses": ["The symptoms of Pyometra include 'pus or discharge from vagina'."]
+    },
+    {"tag":  "pyometra_treatment", "type": "dog",
+     "patterns": ["treatment pyometra", "treat pyometra", "cure pyometra", "remedy pyometra", "heal pyometra", "medication pyometra"],
+     "responses": ["Seek professional help immediately once you notice symptoms as surgery is required urgently to remove the pus from your dog's womb."]
+    },
+    {"tag":  "heartfailure_def", "type": "dog",
+     "patterns": ["congestive heart failure", "congestive heart failure definition", "congestive heart failure meaning"],
+     "responses": ["Congestive heart failure (CHF) is a term that refers to the heart's inability to pump adequate blood to the body."]
+    },
+    {"tag":  "heartfailure_diagnosis", "type": "dog",
+     "patterns": ["coughing after exercise", "coughing before sleep", "difficulty breathing", "hard to breathe", "easily tired", "hard to sleep", "cannot sleep", "increased breathing rate", "fast breathing", "blue tongue", "fainting", "faint", "swollen belly big stomach", "old", "bad diet", "less exercise", "no exercise"],
+     "responses": ["Congestive Heart Failure"]
+    },
+    {"tag":  "heartfailure_symptoms", "type": "dog",
+     "patterns": ["congestive heart failure symptoms", "congestive heart failure signs", "congestive heart failure indicators", "congestive heart failure indications"],
+     "responses": ["The symptoms of Congestive Heart Failure include 'coughing after exercise or before sleep', 'difficulty breathing', 'easily tired', 'hard to fall asleep', 'increased breathing', 'blue tongue', 'fainting', 'swollen belly'. It can be caused by old, poor diet or less exercise."]
+    },
+    {"tag":  "heartfailure_treatment", "type": "dog",
+     "patterns": ["treatment congestive heart failure", "treat congestive heart failure", "cure congestive heart failure", "remedy congestive heart failure", "heal congestive heart failure", "medication congestive heart failure"],
+     "responses": ["Seek professional medical help from vets to obtain a specific diagnosis. Medications, supplements, diet changes or surgery may be recommended."]
+    },
+    {"tag":  "brucellosis_def", "type": "dog",
+     "patterns": ["brucellosis", "brucellosis definition", "brucellosis meaning"],
+     "responses": ["Brucellosis is a contagious bacterial infection caused by the bacterium, Brucella canis (B. canis)."]
+    },
+    {"tag":  "brucellosis_diagnosis", "type": "dog",
+     "patterns": ["infertility", "abortion", "cannot reproduce", "cannot make babies", "vaginal discharge", "swollen testicle"],
+     "responses": ["Brucellosis"]
+    },
+    {"tag":  "brucellosis_symptoms", "type": "dog",
+     "patterns": ["brucellosis symptoms", "brucellosis signs", "brucellosis indicators", "brucellosis indications"],
+     "responses": ["The symptoms of Brucellosis include 'infertility', 'abortion', 'reproduction problems', 'vaginal discharge', 'enlarged testicle'. It can be transmitted through sexual contact."]
+    },
+    {"tag":  "brucellosis_treatment", "type": "dog",
+     "patterns": ["treatment brucellosis", "treat brucellosis", "cure brucellosis", "remedy brucellosis", "heal brucellosis", "medication brucellosis"],
+     "responses": ["Seek professional medical help from vets as antibiotics can be used to control the infection."]
+    },
+    {"tag":  "caninecognitive_def", "type": "dog",
+     "patterns": ["canine cognitive dysfunction", "canine cognitive dysfunction definition", "canine cognitive dysfunction meaning"],
+     "responses": ["Canine cognitive dysfunction (CCD) syndrome is a condition related to the aging of a dog's brain, which ultimately leads to changes in awareness, deficits in learning and memory, and decreased responsiveness to stimuli."]
+    },
+    {"tag":  "caninecognitive_diagnosis", "type": "dog",
+     "patterns": ["confusion", "confused", "excessive licking", "always licking", "forgot house rules", "forgot training", "barking", "slow in learning", "amnesia", "old"],
+     "responses": ["Canine Cognitive Dysfunction"]
+    },
+    {"tag":  "caninecognitive_symptoms", "type": "dog",
+     "patterns": ["canine cognitive dysfunction symptoms", "canine cognitive dysfunction signs", "canine cognitive dysfunction indicators", "canine cognitive dysfunction indications"],
+     "responses": ["The symptoms of Canine Cognitive Dysfunction include 'confusion', 'excessive licking or barking', 'forgetting house rules or training', 'slow in learning'. It is common in older aged dogs."]
+    },
+    {"tag":  "caninecognitive_treatment", "type": "dog",
+     "patterns": ["treatment canine cognitive dysfunction", "treat canine cognitive dysfunction", "cure canine cognitive dysfunction", "remedy canine cognitive dysfunction", "heal canine cognitive dysfunction", "medication canine cognitive dysfunction"],
+     "responses": ["Lifelong therapy and support is required. Consider retraining or imposing daily routines for your dog. Seek professional medical help from vets for further consultation."]
+    },
+    {"tag":  "facialparalysis_dog_def", "type": "dog",
+     "patterns": ["facial nerve paralysis", "facial nerve paralysis definition", "facial nerve paralysis meaning"],
+     "responses": ["Facial nerve paresis is a dysfunction of the seventh cranial nerve, the facial nerve. This condition is evidenced by paralysis or weakness of the muscles of the ears, eyelids, lips, and nostrils."]
+    },
+    {"tag":  "facialparalysis_dog_diagnosis", "type": "dog",
+     "patterns": ["messy eating", "food falling from mouth", "drooling", "cannot close eye", "ear drooping", "lip drooping", "face spasm twitching", "uneven face", "face injury trauma"],
+     "responses": ["Facial Nerve Paralysis"]
+    },
+    {"tag":  "facialparalysis_dog_symptoms", "type": "dog",
+     "patterns": ["facial nerve paralysis symptoms", "facial nerve paralysis signs", "facial nerve paralysis indicators", "facial nerve paralysis indications"],
+     "responses": ["The symptoms of Facial Nerve Paralysis include 'messy eating/food falling from mouth', 'drooling', 'difficulty closing eyes', 'drooping ears and lips', 'face spasms', 'facial asymmetry'. It may be caused by a injury or trauma to the face."]
+    },
+    {"tag":  "facialparalysis_dog_treatment", "type": "dog",
+     "patterns": ["treatment facial nerve paralysis", "treat facial nerve paralysis", "cure facial nerve paralysis", "remedy facial nerve paralysis", "heal facial nerve paralysis", "medication facial nerve paralysis"],
+     "responses": ["Seek professional medical help from vets. Hospitalization or surgery may be needed."]
+    },
+    {"tag":  "skinallergy_def", "type": "dog",
+     "patterns": ["skin allergy", "skin allergy definition", "skin allergy meaning"],
+     "responses": ["Skin allergy, called allergic dermatitis, are the most common type of allergic reactions in dogs."]
+    },
+    {"tag":  "skinallergy_diagnosis", "type": "dog",
+     "patterns": ["itchy ears", "scratching", "itching", "red skin", "grass pollen", "fleas", "dust mites"],
+     "responses": ["Skin Allergy"]
+    },
+    {"tag":  "skinallergy_symptoms", "type": "dog",
+     "patterns": ["skin allergy symptoms", "skin allergy signs", "skin allergy indicators", "skin allergy indications"],
+     "responses": ["The symptoms of Skin Allergy include 'itchy ears', 'scratching', 'itching', 'red skin'. It may be caused through contact with grass/pollen or bites from fleas/dust mites"]
+    },
+    {"tag":  "skinallergy_treatment", "type": "dog",
+     "patterns": ["treatment skin allergy", "treat skin allergy", "cure skin allergy", "remedy skin allergy", "heal skin allergy", "medication skin allergy"],
+     "responses": ["Seek professional medical help from vets to identify the type of skin allergy for suitable treatment."]
+    },
+    {"tag":  "thrombocytopenia_def", "type": "dog",
+     "patterns": ["thrombocytopenia", "thrombocytopenia definition", "thrombocytopenia meaning"],
+     "responses": ["Thrombocytopenia is a decrease in the number of blood platelets (also known as thrombocytes) circulating in the blood."]
+    },
+    {"tag":  "thrombocytopenia_diagnosis", "type": "dog",
+     "patterns": ["prolonged bleeding", "bleeding wont stop", "difficulty healing wounds", "wounds wont heal"],
+     "responses": ["Thrombocytopenia"]
+    },
+    {"tag":  "thrombocytopenia_symptoms", "type": "dog",
+     "patterns": ["thrombocytopenia symptoms", "thrombocytopenia signs", "thrombocytopenia indicators", "thrombocytopenia indications"],
+     "responses": ["The symptoms of Thrombocytopenia include 'prolonged bleeding after injury', 'difficulty healing wounds'."]
+    },
+    {"tag":  "thrombocytopenia_treatment", "type": "dog",
+     "patterns": ["treatment thrombocytopenia", "treat thrombocytopenia", "cure thrombocytopenia", "remedy thrombocytopenia", "heal thrombocytopenia", "medication thrombocytopenia"],
+     "responses": ["Seek professional medical help from vets especially when blood loss is sudden. A blood transfusion may be performed."]
+    }
+]}
