@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>PawBot</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <style>
+      body{
+        background-image: url('/static/background.jpg');
+        background-attachment: fixed;
+	    background-repeat: no-repeat;
+      }
+
+      .welcomelogo{
+        max-width:10%;
+        max-height:10%;
+      }
+
+      .chatlogo{
+        max-width:3.5%;
+        max-height:3.5%;
+      }
+
+      .petIcon{
+        max-width:40%;
+        max-height:40%;
+      }
+
+      h1{
+        font-size: 20px;
+        font-family: 'Arial', sans-serif;
+      }
+
+      h2{
+        font-size: 20px;
+        font-family: 'Arial', sans-serif;
+        font-weight: bold;
+      }
+
+      h3{
+        font-size: 13px;
+        font-family: 'Arial', sans-serif;
+        font-weight: bold;
+      }
+
+      .menu-btn{
+        float: right;
+        margin: 5px;
+      }
+
+      .selection-container{
+        background-color: white;
+        width: auto;
+        height: auto;
+        padding: 25px;
+        margin: 70px;
+        border-radius: 30px;
+      }
+
+      .chatbox{
+        background-color: white;
+        width: 80%;
+        height: 450px;
+        border-style: solid;
+        overflow: scroll;
+        margin: auto;
+        display: flex;
+        flex-direction: column-reverse;
+      }
+
+      .inputbox{
+        margin: auto;
+        width: 75%;
+      }
+    </style>
+
+  </head>
+  <body>
+    <div class="selection-container" id="petSelect" align="center">
+      <div class="container" align="center">
+        <img class="welcomelogo" src="{{url_for('static', filename='logo.png')}}">
+        <br><br>
+        <h1 align="center">
+          Greetings! I am PawBot, a medical assistance chatbot for pet diseases.
+          <br>
+          Before we begin, could you tell me what species is your pet?
+        </h1>
+        <br><br>
+        <div class="row">
+            <div class="col-sm">
+                <button class="btn btn-primary btn-block btn-lg" id="dog-button">
+                  <img class="petIcon" src="{{url_for('static', filename='dog.png')}}"> <br><br> Dog / Canine
+                </button>
+            </div>
+            <div class="col-sm">
+                <button class="btn btn-primary btn-block btn-lg" id="cat-button">
+                  <img class="petIcon" src="{{url_for('static', filename='cat.png')}}"> <br><br> Cat / Feline
+                </button>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" id="chat" style="display: none;">
+      <br>
+      <h2>
+        <img class="chatlogo" src="{{url_for('static', filename='logo.png')}}"> &emsp; Malaysian English Pet Medical Chatbot, PawBot
+        <button class="btn btn-primary btn-block menu-btn" id="back-button">Reselect Pet Type</button>
+        <button type="button" class="btn btn-primary btn-block menu-btn" data-bs-toggle="modal" data-bs-target="#guidePopup" id="guide-button">How To Use?</button>
+      </h2>
+      <hr>
+      <br>
+        <div class="row chatbox">
+          <div class="col">
+            <p class="firstmsg">Pawbot: Greetings! I am Pawbot. Click on "How to Use" above to see what I can do or click on "Reselect Pet Type" to change pet types.</p><br>
+            <p id="response"></p>
+          </div>
+        </div>
+        <br>
+        <div class="row inputbox" align="center">
+          <div class="col-lg-10">
+            <input class="form-control" type="text" name="question" id="question">
+          </div>
+          <div class="col-lg-2">
+            <button class="btn btn-primary btn-block" id="submit-button" style="width: 100%">Send</button>
+          </div>
+        </div>
+        <br><br>
+        <h3 align="center">
+          DISCLAIMER: Responses given by this chatbot are for informational purposes only, they are by no means professional veterinarian advice! Always consult your vet for your pet's medical condition!
+        </h3>
+    </div>
+
+    <div class="modal fade" id="guidePopup" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">How To Use PawBot?</h5>
+            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <h6>
+              Here are the list of things you can do!<br><br>
+              1. Ask me about the definitions, symptoms and suggested treatments of various pet diseases<br><br>
+              2. Tell me the symptoms,behaviors or other details of your pet so I can perform a brief medical diagnosis<br>
+              Note: Only diagnoses of 15% probability and above are displayed. If i am unable to give you a diagnosis, try again by giving more symptoms.<br><br>
+              3. Ask me about the recommended diets for your pet (foods to eat or avoid)<br><br>
+              4. Tell me which state in Malaysia you live in and I can suggest top treatment locations based on ratings<br><br>
+            </h6>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/static/jquery.min.js" ></script>
+
+    <script>
+      jQuery(document).ready(function() {
+        $("#dog-button").click(function(e) {
+          $(this).prop("disabled", true);
+          e.preventDefault();
+          $.ajax({
+              type: "POST",
+              url: "/dogselect",
+              data: {
+
+              },
+              success: function(response) {
+                  alert('You have selected Dog, click OK to proceed. ');
+                  $("#chat").show();
+                  $("#petSelect").hide();
+              },
+              error: function(response) {
+                  alert('error');
+              }
+          });
+        });
+
+        $("#cat-button").click(function(e) {
+          $(this).prop("disabled", true);
+          e.preventDefault();
+          $.ajax({
+              type: "POST",
+              url: "/catselect",
+              data: {
+
+              },
+              success: function(response) {
+                  alert('You have selected Cat, click OK to proceed. ');
+                  $("#chat").show();
+                  $("#petSelect").hide();
+              },
+              error: function(response) {
+                  alert('error');
+              }
+          });
+        });
+
+        $("#submit-button").click(function(e) {
+          e.preventDefault();
+          $.ajax({
+              type: "POST",
+              url: "/pawbot",
+              data: {
+                  question: $("#question").val()
+              },
+              success: function(response) {
+                $("#response").append("Me: "+$("#question").val()+ "<br><br> PawBot: "+ response.answer + "<br><br>");
+                $("#question").val("")
+              },
+              error: function(response) {
+                  alert('error');
+              }
+          });
+        });
+
+        $('#question').keydown(function (e){
+           if(e.keyCode == 13){
+              $.ajax({
+                type: "POST",
+                url: "/pawbot",
+                data: {
+                    question: $("#question").val()
+                },
+                success: function(response) {
+                  $("#response").append("Me: "+$("#question").val()+ "<br> PawBot: "+ response.answer + "<br><br>");
+                  $("#question").val("")
+                },
+                error: function(response) {
+                    alert('error');
+                }
+              });
+           }
+        })
+
+        $("#back-button").click(function(e) {
+            if (confirm('Refresh to reselect new pet type?')) {
+              location.reload()
+            }
+        });
+      });
+    </script>
+  </body>
+</html>
